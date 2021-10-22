@@ -1,6 +1,8 @@
 ## Dotfiles
 
-Check issues
+- Check issues
+
+other dotfiles that will probably enter here are oh-my-zsh, passwords stuff etc
 
 ### Links
 - [dotfiles fireship video](https://www.youtube.com/watch?v=r_MpUP6aKiQ&ab_channel=Fireship)
