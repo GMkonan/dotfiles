@@ -2,7 +2,7 @@
 
 - Check issues
 
-other dotfiles that will probably enter here are oh-my-zsh, passwords stuff etc
+install spaceship theme too
 
 ### Links
 - [dotfiles fireship video](https://www.youtube.com/watch?v=r_MpUP6aKiQ&ab_channel=Fireship)
@@ -10,3 +10,4 @@ other dotfiles that will probably enter here are oh-my-zsh, passwords stuff etc
 - [Getting Started With Dotfiles medium article](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789)
 - [Build Your Own Linux Dotfiles Manager freecodecamp article](https://www.freecodecamp.org/news/build-your-own-dotfiles-manager-from-scratch/)
 - [Make symlinks script](https://betterprogramming.pub/managing-your-dotfiles-with-git-4dee603a19a2)
+- [make zsh default shell](https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell)
