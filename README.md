@@ -12,3 +12,4 @@ install spaceship theme too
 - [Make symlinks script](https://betterprogramming.pub/managing-your-dotfiles-with-git-4dee603a19a2)
 - [make zsh default shell](https://askubuntu.com/questions/131823/how-to-make-zsh-the-default-shell)
 - [Interesting themes and stuff ubuntu](https://www.youtube.com/watch?v=5b-xQkRWHjQ&list=WL&index=23&t=902s&ab_channel=DistroTube)
+- [gitconfig Example](https://github.com/jessfraz/dotfiles/blob/master/.gitconfig)
