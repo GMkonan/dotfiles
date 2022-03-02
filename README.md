@@ -1,10 +1,20 @@
 ## Dotfiles
 
-- Check issues
+Some Notes about each file config, maybe this will be automated in the future
 
-install spaceship theme too
+### .zshrc
+This zsh config file use's oh-my-zsh and some plugins.
+You need to install the spaceship theme.
 
-### Links
+### init.vim
+It's a config file for **neovim** that uses **vim-plug**, so you need to have both.
+If you already have them just open the file using nvim and install the plugins with `:PlugInstall`.
+
+### Ideas
+- use env files to store data that is used by scripts
+- make app and packages installation by script (maybe using a brewfile?)
+
+### Useful Links
 - [dotfiles fireship video](https://www.youtube.com/watch?v=r_MpUP6aKiQ&ab_channel=Fireship)
 - [Git Bare Repository DistroTube](https://www.youtube.com/watch?v=tBoLDpTWVOM&ab_channel=DistroTube)
 - [Getting Started With Dotfiles medium article](https://medium.com/@webprolific/getting-started-with-dotfiles-43c3602fd789)

@@ -1,1 +1,4 @@
 .secrets
+.zsh_history
+.env
+.env.local

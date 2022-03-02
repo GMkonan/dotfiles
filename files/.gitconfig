@@ -9,3 +9,5 @@
 
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
+[credential]
+	helper = store

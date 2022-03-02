@@ -146,4 +146,11 @@ zinit light zsh-users/zsh-completions
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH=$PATH:/usr/local/go/bin
+# source tokens and stuff
 source "$HOME"/.dotfiles/.secrets
+
+# aliases
+alias work-tmux='bash ./worktmux.sh'
+
+export SPICETIFY_INSTALL="/home/gmkonan/spicetify-cli"
+export PATH="$SPICETIFY_INSTALL:$PATH"
