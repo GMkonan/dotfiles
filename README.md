@@ -10,6 +10,9 @@ You need to install the spaceship theme.
 It's a config file for **neovim** that uses **vim-plug**, so you need to have both.
 If you already have them just open the file using nvim and install the plugins with `:PlugInstall`.
 
+### tmux.conf
+Don't forget to reload your config, you can use this command `tmux source-file ~/.tmux.conf`.
+
 ### Ideas
 - use env files to store data that is used by scripts
 - make app and packages installation by script (maybe using a brewfile?)
