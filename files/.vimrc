@@ -1,3 +1,12 @@
+"
+"
+" Not using this anymore since I switched to neovim
+" If you want to check my neovim config, go to the file init.vim
+" It's in this folder as well :)
+"
+"
+"
+
 
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible

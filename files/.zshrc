@@ -4,6 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/gmkonan/.oh-my-zsh"
 
+export ZSH_CUSTOM=$ZSH/custom
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -154,3 +156,4 @@ alias work-tmux='bash ./worktmux.sh'
 
 export SPICETIFY_INSTALL="/home/gmkonan/spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"
+export PATH=$PATH:/home/gmkonan/.spicetify
