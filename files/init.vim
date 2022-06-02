@@ -5,6 +5,8 @@
 :set shiftwidth=4
 :set smarttab
 :set softtabstop=4
+" highlight matching parens, braces, brackets, etc
+:set showmatch
 
 call plug#begin()
 
@@ -20,5 +22,5 @@ Plug 'https://github.com/leafgarland/typescript-vim'
 
 call plug#end()
 
-" Key bindings to open nerdtree
+" Key bindings to open nerdtree (<C-t> = ctrl + t)
 nnoremap <C-t> :NERDTreeToggle<CR>
