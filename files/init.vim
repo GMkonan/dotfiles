@@ -19,6 +19,7 @@ Plug 'https://github.com/preservim/nerdtree'
 Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/leafgarland/typescript-vim'
+Plug 'https://github.com/fsouza/prettierd'
 
 call plug#end()
 

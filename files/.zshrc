@@ -153,6 +153,8 @@ source "$HOME"/.secrets
 
 # aliases
 alias work-tmux='bash ./worktmux.sh'
+alias lg='lazygit'
+
 
 export SPICETIFY_INSTALL="/home/gmkonan/spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"
