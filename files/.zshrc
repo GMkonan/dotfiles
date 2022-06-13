@@ -102,8 +102,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+### SPACESHIP THEME
+# If you want to customize more options from spaceship theme check out:
+# https://github.com/spaceship-prompt/spaceship-prompt/blob/master/docs/options.md
+
 SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
+  #user          # Username section
   dir           # Current directory section
   host          # Hostname section
   git           # Git section (git_branch + git_status)
