@@ -19,11 +19,19 @@ Plug 'https://github.com/preservim/nerdtree'
 Plug 'https://github.com/rafi/awesome-vim-colorschemes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/leafgarland/typescript-vim'
-Plug 'https://github.com/fsouza/prettierd'
+" Plug 'https://github.com/fsouza/prettierd'
 " Plug 'https://github.com/rking/ag.vim'
 Plug 'https://github.com/jeetsukumaran/vim-buffergator'
+Plug 'neoclide/coc-prettier', {'do': 'npm install --frozen-lockfile --legacy-peer-deps'}
 
 call plug#end()
 
 " Key bindings to open nerdtree (<C-t> = ctrl + t)
 nnoremap <C-t> :NERDTreeToggle<CR>
+" Exit insert mode with jj instead of ESC
+inoremap jj <ESC>
+
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument

@@ -9,6 +9,7 @@ mkdir -p ~/.config/nvim/ && ln -nsf "$PWD"/files/init.vim ~/.config/nvim/init.vi
 # install vim-plug for neovim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+ln -nsf "$PWD"/scripts/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -nsf "$PWD"/scripts/worktmux.sh ~/worktmux.sh
 ln -nsf "$PWD"/.secrets ~/.secrets
 ln -nsf "$PWD"/files/.tmux.conf ~/.tmux.conf

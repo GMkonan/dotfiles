@@ -2,6 +2,10 @@
 
 Some Notes about each file config, maybe this will be automated in the future
 
+### Todos
+
+- [ ] Check if Homebrew is a good option to use on linux (maybe make installs via brew)
+
 ### .zshrc
 
 This zsh config file use's oh-my-zsh and some plugins.
@@ -11,6 +15,10 @@ You need to install the spaceship theme.
 
 It's a config file for **neovim** that uses **vim-plug**, so you need to have both.
 If you already have them just open the file using nvim and install the plugins with `:PlugInstall`.
+
+### coc.settings
+
+json file with settings for nvim plugins installed via `coc`
 
 ### .vimrc
 
