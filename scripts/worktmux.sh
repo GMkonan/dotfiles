@@ -13,31 +13,35 @@ tmux new-window -t $SESSION:1 -n 'Work'
 tmux split-window -h
 tmux split-window -v
 tmux split-window -v
-tmux split-window -v
+#tmux split-window -v
 
 #pane 0
 tmux select-pane -t 0
-tmux resize-pane -R 27
+tmux resize-pane -R 18
 
 #pane 1
 tmux select-pane -t 1
-tmux resize-pane -U 8
+#tmux resize-pane -U 8
+#tmux send-keys 'pnpm dev' C-m
+#tmux send-keys 'clear' C-m
 
 #pane 2
 tmux select-pane -t 2
-tmux resize-pane -U 8
+#tmux resize-pane -U 8
+tmux send-keys 'cd apps' C-m
+tmux send-keys 'clear' C-m
 
 #pane 3
 tmux select-pane -t 3
-tmux resize-pane -U 9
-tmux send-keys 'cd hasura' C-m
+#tmux resize-pane -U 9
+tmux send-keys 'cd packages/hasura' C-m
 tmux send-keys 'clear' C-m
 
 #pane 4
-tmux select-pane -t 4
-tmux resize-pane -D 5
-tmux send-keys 'cd hasura' C-m
-tmux send-keys 'clear' C-m
+# tmux select-pane -t 4
+# tmux resize-pane -D 5
+# tmux send-keys 'cd hasura' C-m
+# tmux send-keys 'clear' C-m
 
 #re-select first pane again
 tmux select-pane -t 0

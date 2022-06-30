@@ -170,3 +170,8 @@ alias lg='lazygit'
 export SPICETIFY_INSTALL="/home/gmkonan/spicetify-cli"
 export PATH="$SPICETIFY_INSTALL:$PATH"
 export PATH=$PATH:/home/gmkonan/.spicetify
+
+# pnpm
+export PNPM_HOME="/home/gmkonan/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
