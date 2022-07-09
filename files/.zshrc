@@ -151,11 +151,11 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 
 # close tmux sessions on terminal window closed
-function close_tmux
-{
-    tmux kill-server
-}
-trap close_tmux EXIT
+# function close_tmux
+# {
+#     tmux kill-server
+# }
+# trap close_tmux EXIT
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH=$PATH:/usr/local/go/bin
