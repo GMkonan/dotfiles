@@ -175,3 +175,8 @@ export PATH=$PATH:/home/gmkonan/.spicetify
 export PNPM_HOME="/home/gmkonan/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# flyctl (fly.io)
+export FLYCTL_INSTALL="/home/gmkonan/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+# flyctl end
