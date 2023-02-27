@@ -1,13 +1,13 @@
 #!/bin/bash
 
-sudo apt update && sudo apt upgrade -y
+apt update && apt upgrade -y
 
 echo "Installing Git..."
 
-sudo apt install -y git
+apt-get install -y git
 
 echo "Installing zsh and oh-my-zsh..."
-sudo apt-get install -y zsh
+apt-get install -y zsh
 
 # change default login shell
 chsh -s $(which zsh)
