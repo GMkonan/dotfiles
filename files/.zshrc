@@ -70,9 +70,9 @@ ZSH_THEME="spaceship"
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
+# Example format: plugins=(zsh-syntax-highlighting zsh-autosuggestions)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -180,3 +180,12 @@ export PATH="$PNPM_HOME:$PATH"
 export FLYCTL_INSTALL="/home/gmkonan/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # flyctl end
+
+[ -f "/home/gmkonan/.ghcup/env" ] && source "/home/gmkonan/.ghcup/env" # ghcup-env
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+
+export AIRPLANE_INSTALL="/home/gmkonan/.airplane"
+export PATH="$AIRPLANE_INSTALL/bin:$PATH"
+
