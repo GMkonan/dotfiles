@@ -39,6 +39,7 @@ git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/
 
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
+zsh
 source ~/.zshrc
 
 echo "Installing Docker..."
