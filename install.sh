@@ -4,15 +4,15 @@ apt-get update && apt-get upgrade -y
 apt update && apt upgrade -y
 
 echo "Installing utilities (wget, curl)..."
-apt install curl
+apt install curl -y
 apt update && apt upgrade -y
-apt-get install wget
+apt-get install wget -y
 apt-get update && apt-get upgrade -y
 
-echo "Installing Git..."
+# echo "Installing Git..."
 
-apt-get install -y git
-apt-get update && apt-get upgrade -y
+# apt-get install -y git
+# apt-get update && apt-get upgrade -y
 
 echo "Installing zsh and oh-my-zsh..."
 apt-get install -y zsh
@@ -21,10 +21,11 @@ apt-get update && apt-get upgrade -y
 apt-get update && apt-get upgrade -y
 apt update && apt upgrade -y
 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
 # change default login shell
 chsh -s $(which zsh)
 
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
