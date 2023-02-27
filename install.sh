@@ -1,13 +1,25 @@
 #!/bin/bash
 
+apt-get update && apt-get upgrade -y
 apt update && apt upgrade -y
+
+echo "Installing utilities (wget, curl)..."
+apt install curl
+apt update && apt upgrade -y
+apt-get install wget
+apt-get update && apt-get upgrade -y
 
 echo "Installing Git..."
 
 apt-get install -y git
+apt-get update && apt-get upgrade -y
 
 echo "Installing zsh and oh-my-zsh..."
 apt-get install -y zsh
+apt-get update && apt-get upgrade -y
+
+apt-get update && apt-get upgrade -y
+apt update && apt upgrade -y
 
 # change default login shell
 chsh -s $(which zsh)
@@ -36,5 +48,8 @@ echo "Installing Docker..."
 ln -nsf "$PWD"/configs/.gitconfig ~/.gitconfig
 ln -nsf "$PWD"/configs/.tmux.conf ~/.tmux.conf
 ln -nsf "$PWD"/.secrets ~/.secrets
+
+apt-get update && apt-get upgrade -y
+apt update && apt upgrade -y
 
 echo "setup complete! Enjoy your configs :)"
