@@ -39,8 +39,6 @@ git clone https://github.com/spaceship-prompt/spaceship-prompt.git ${ZSH_CUSTOM:
 
 ln -s ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship.zsh-theme
 
-zsh
-source ~/.zshrc
 
 echo "Installing Docker..."
 #https://matt-wxw.medium.com/one-command-to-install-docker-and-docker-compose-on-ubuntu-febb8bc5cb72
@@ -69,5 +67,9 @@ ln -nsf "$PWD"/.secrets ~/.secrets
 
 apt-get update && apt-get upgrade -y
 apt update && apt upgrade -y
+
+#finish entering zsh and sourcing since this pauses the script
+zsh
+source ~/.zshrc
 
 echo "setup complete! Enjoy your configs :)"
