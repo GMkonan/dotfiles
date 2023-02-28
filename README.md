@@ -2,6 +2,12 @@ add theme and plugins to zsh automatically
 
 change terminal theme automatically
 
+install flameshot automatically
+
+install tandem automatically
+
+install 1password automatically?
+
 If you are having problems with permissions don't forget to run the install script with `sudo`
 ```
 sudo install.sh
