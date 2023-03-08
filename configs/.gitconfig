@@ -11,5 +11,6 @@
 	whitespace = fix
 [credential]
 	helper = store
+	credentialStore = gpg
 [init]
 	defaultBranch = main

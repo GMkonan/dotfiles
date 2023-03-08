@@ -18,6 +18,10 @@ echo "Installing zsh and oh-my-zsh..."
 apt-get install -y zsh
 apt-get update && apt-get upgrade -y
 
+echo "Installing LTS NodeJS via nvm"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+nvm use --lts
+
 apt-get update && apt-get upgrade -y
 apt update && apt upgrade -y
 
@@ -66,7 +70,7 @@ chmod +x /usr/local/bin/docker-compose
 # symbolic links, f flag can overwrite files
 ln -nsf "$PWD"/configs/.gitconfig ~/.gitconfig
 ln -nsf "$PWD"/configs/.tmux.conf ~/.tmux.conf
-ln -nsf "$PWD"/.secrets ~/.secrets
+ln -nsf "$PWD"/configs/.secrets ~/.secrets
 
 apt-get update && apt-get upgrade -y
 apt update && apt upgrade -y
