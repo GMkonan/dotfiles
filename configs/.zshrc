@@ -33,3 +33,11 @@ source "$HOME"/.secrets
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Flyctl paths
+export FLYCTL_INSTALL="/home/gmkonan/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# Airplane paths
+export AIRPLANE_INSTALL="/home/gmkonan/.airplane"
+export PATH="$AIRPLANE_INSTALL/bin:$PATH"

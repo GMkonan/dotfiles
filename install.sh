@@ -6,13 +6,9 @@ apt update && apt upgrade -y
 echo "Installing utilities (wget, curl)..."
 apt install curl -y
 apt update && apt upgrade -y
+
 apt-get install wget -y
 apt-get update && apt-get upgrade -y
-
-# echo "Installing Git..."
-
-# apt-get install -y git
-# apt-get update && apt-get upgrade -y
 
 echo "Installing zsh and oh-my-zsh..."
 apt-get install -y zsh
@@ -22,10 +18,13 @@ echo "Installing LTS NodeJS via nvm"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm use --lts
 
-apt-get update && apt-get upgrade -y
-apt update && apt upgrade -y
-
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+echo "Installing CLI's..."
+# Fly.io
+curl -L https://fly.io/install.sh | sh
+# Airplane
+curl -L https://github.com/airplanedev/cli/releases/latest/download/install.sh | sh
 
 # change default login shell
 chsh -s $(which zsh)
@@ -78,5 +77,8 @@ apt update && apt upgrade -y
 #finish entering zsh and sourcing since this pauses the script
 zsh
 source ~/.zshrc
+
+chmod +x ./scripts/theme.sh
+sudo ./scripts/theme.sh
 
 echo "setup complete! Enjoy your configs :)"
