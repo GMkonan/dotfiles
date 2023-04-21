@@ -41,3 +41,11 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # Airplane paths
 export AIRPLANE_INSTALL="/home/gmkonan/.airplane"
 export PATH="$AIRPLANE_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/gmkonan/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
