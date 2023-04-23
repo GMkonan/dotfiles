@@ -20,3 +20,5 @@ run_scripts() {
   cat "$PWD"/scripts/steps/*.sh > /tmp/dotfiles_script
   bash /tmp/dotfiles_script
 }
+
+run_scripts
