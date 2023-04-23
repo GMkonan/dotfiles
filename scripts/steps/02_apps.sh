@@ -15,6 +15,8 @@ install_apt_packages() {
     git
     zsh
     code
+    wget
+    curl
     google-chrome-stable
     spotify-client
   )
