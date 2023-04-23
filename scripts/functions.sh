@@ -28,18 +28,18 @@ echo_color () {
 }
 
 
-is_apt_package_installed() {
-    package_name=$1
+# is_apt_package_installed() {
+#     package_name=$1
 
-    # Check if the package is installed
-    if dpkg -s "$package_name" >/dev/null 2>&1; then
-        echo_color blue "$package_name is installed."
-        return 0
-    else
-        echo_color blue "$package_name is not installed."
-        return 1
-    fi
-}
+#     # Check if the package is installed
+#     if dpkg -s "$package_name" >/dev/null 2>&1; then
+#         echo_color blue "$package_name is installed."
+#         return 0
+#     else
+#         echo_color blue "$package_name is not installed."
+#         return 1
+#     fi
+# }
 
 renew_sudo() { # helper function for when the following command needs 'sudo' active but shouldn't be called with it
     sudo -S -v <<< "${sudo_password}" 2> /dev/null
@@ -51,11 +51,11 @@ update_apt() {
 
 FUNCTIONS_LOADED=TRUE
 
-# function is_apt_package_installed() {
-#   local package="$1"
+function is_apt_package_installed() {
+  local package="$1"
 
-#   apt list --quiet --quiet --installed "${package}" 2>/dev/null | grep --quiet .
-# }
+  apt list --quiet --quiet --installed "${package}" 2>/dev/null | grep --quiet .
+}
 
 sudo() {
   if [ "$(id -u)" -eq 0 ]; then
