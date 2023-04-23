@@ -1,12 +1,30 @@
+# Zplug 
+source ~/.zplug/init.zsh
+
+zplug "mafredri/zsh-async", from:github
+zplug "marlonrichert/zsh-autocomplete", from:github
+zplug "plugins/git",   from:oh-my-zsh, defer:1
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Load theme file
+zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM=$ZSH/custom
-
-ZSH_THEME="spaceship"
-
-plugins=(fast-syntax-highlighting zsh-autosuggestions zsh-completions)
-
-source $ZSH/oh-my-zsh.sh
+#export ZSH="$HOME/.oh-my-zsh"
+#export ZSH_CUSTOM=$ZSH/custom
 
 SPACESHIP_PROMPT_ORDER=(
   #user          # Username section
@@ -26,26 +44,10 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
 
-# source tokens and stuff
-source "$HOME"/.secrets
-
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Flyctl paths
-export FLYCTL_INSTALL="/home/gmkonan/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
-
-# Airplane paths
-export AIRPLANE_INSTALL="/home/gmkonan/.airplane"
-export PATH="$AIRPLANE_INSTALL/bin:$PATH"
-
-# pnpm
-export PNPM_HOME="/home/gmkonan/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+if [ -f "$HOME"/.secrets ]; then
+  source "$HOME"/.secrets
+fi

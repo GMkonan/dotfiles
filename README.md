@@ -1,8 +1,3 @@
-Probably gonna use some sort of dotfiles manager
-
-- https://github.com/twpayne/chezmoi
-- https://github.com/anishathalye/dotbot
-
-Inspirations:
-
-- https://github.com/felipecrs/dotfiles
+- Make vscode sync automatically after install?
+- add extensions to google-chrome automatically
+- install a font and use in terminal via command line ubuntu

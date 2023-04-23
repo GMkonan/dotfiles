@@ -1,16 +1,15 @@
-#!/bin/bash
-
-true || source ./functions.sh   
+#!/bin/bash 
 
 readonly wanted_packages=(
-  ca-certificates
-  apt-transport-https
-  git
-  curl
-  wget
-  zsh
-  code
-  google-chrome-stable
+  # ca-certificates
+  # apt-transport-https
+  # git
+  # curl
+  # wget
+  # zsh
+  # code
+  # google-chrome-stable
+  spotify-client
 )
 missing_packages=()
 
@@ -23,6 +22,6 @@ done
 if [[ ${#missing_packages[@]} -gt 0 ]]; then
   echo "Installing missing packages with APT: ${missing_packages[*]}"
 
-  sudo apt update --yes
-  sudo apt install --yes --install-recommends "${missing_packages[@]}"
+  apt update --yes
+  apt install --yes --install-recommends "${missing_packages[@]}"
 fi
