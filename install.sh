@@ -7,9 +7,10 @@ set -a
 
 run_scripts() {
 
-  # run_backup
+  echo_color blue "Making sure everything is up to date..."
+  update
 
-  echo "Creating dotfiles symlinks"
+  echo_color blue "Creating symlinks..."
   ln -nsf "$PWD"/configs/zshenv ~/.zshenv
   ln -nsf "$PWD"/configs/zshrc ~/.zshrc
   ln -nsf "$PWD"/configs/tmux.conf ~/.tmux.conf

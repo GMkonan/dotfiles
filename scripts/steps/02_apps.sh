@@ -29,7 +29,7 @@ for package in "${wanted_packages[@]}"; do
 done
 
 if [[ ${#missing_packages[@]} -gt 0 ]]; then
-  echo_color blue "Installing missing packages with APT: ${missing_packages[*]}"
+  echo_color yellow "Installing missing packages with APT: ${missing_packages[*]}"
 
   sudo apt update --yes
   sudo apt install --yes --install-recommends "${missing_packages[@]}"
@@ -40,12 +40,15 @@ fi
 # Install curl apps
 
 curl_apps() {
-    echo "Installing nvm"
+    echo_color blue "Installing nvm"
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
     echo_color blue "Installing NodeJS LTS..."
+    # Make nvm command available to terminal
+    source ~/.nvm/nvm.sh
+    # Install NodeJS LTS
     nvm use --lts
 
-    echo "Installing CLI's..."
+    echo_color blue "Installing CLI's..."
     # Fly.io
     curl -L https://fly.io/install.sh | sh
     # Airplane
@@ -53,7 +56,7 @@ curl_apps() {
 }
 
 install_docker() {
-    echo "Installing Docker..."
+    echo_color blue "Installing Docker..."
     #https://matt-wxw.medium.com/one-command-to-install-docker-and-docker-compose-on-ubuntu-febb8bc5cb72
     sudo apt-get remove docker docker-engine docker.io containerd runc
     sudo apt-get update && apt-get upgrade -y

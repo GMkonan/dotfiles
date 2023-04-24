@@ -46,10 +46,16 @@ renew_sudo() { # helper function for when the following command needs 'sudo' act
 }
 
 update_apt() {
-    apt update && apt upgrade -y
+    sudo apt update && sudo apt upgrade -y
+}
+update_apt_get() {
+    sudo apt-get update && sudo apt-get upgrade -y
 }
 
-FUNCTIONS_LOADED=TRUE
+update() {
+    update_apt
+    update_apt_get
+}
 
 function is_apt_package_installed() {
   local package="$1"
@@ -57,14 +63,16 @@ function is_apt_package_installed() {
   apt list --quiet --quiet --installed "${package}" 2>/dev/null | grep --quiet .
 }
 
-sudo() {
-  if [ "$(id -u)" -eq 0 ]; then
-    "$@"
-  else
-    if ! command sudo --non-interactive true 2>/dev/null; then
-      echo_color yellow "Root privileges are required, please enter your password below"
-      command sudo --validate
-    fi
-    command sudo "$@"
-  fi
-}
+# sudo() {
+#   if [ "$(id -u)" -eq 0 ]; then
+#     "$@"
+#   else
+#     if ! command sudo --non-interactive true 2>/dev/null; then
+#       echo_color yellow "Root privileges are required, please enter your password below"
+#       command sudo --validate
+#     fi
+#     command sudo "$@"
+#   fi
+# }
+
+FUNCTIONS_LOADED=TRUE

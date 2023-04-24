@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ "$FUNCTIONS_LOADED" != 'TRUE' ]; then
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    source "${DIR}/../functions.sh"
+fi
+
+echo_color blue "Setting up Gnome Terminal..."
+
 # Make profile theme be called "Default"! Necessary for gogh
 id=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$id/ visible-name 'Default'
