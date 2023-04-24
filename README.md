@@ -4,6 +4,12 @@
 
 ### Problems
 
-- initial_setup call (no such file or directory)
-- add_repos call (no such file or directory)
--
+- nvm
+- spotify sudo
+
+### Ideas
+
+- install tandem
+- install nerd font
+- sync visual studio code automatically
+- google extensions? (maybe just logging is enough)
