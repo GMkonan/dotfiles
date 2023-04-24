@@ -6,10 +6,12 @@ if [ "$FUNCTIONS_LOADED" != 'TRUE' ]; then
 fi
 
 make_zsh_default_shell() {
-chsh -s $(which zsh)
+    echo_color blue "Making zsh the default shell..."
+    chsh -s $(which zsh)
 }
 
 install_zplug() {
+    echo_color blue "Installing zplug..."
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 }
 
