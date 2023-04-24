@@ -12,6 +12,8 @@ install_apt_packages() {
     readonly wanted_packages=(
     ca-certificates
     apt-transport-https
+    gnupg
+    lsb-release
     git
     zsh
     code
@@ -44,7 +46,7 @@ curl_apps() {
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
     echo_color blue "Installing NodeJS LTS..."
     # Make nvm command available to terminal
-    source ~/.zshrc
+    source ~/.bashrc
     source ~/.nvm/nvm.sh
     # Install NodeJS LTS
     nvm use --lts
@@ -58,23 +60,26 @@ curl_apps() {
 
 install_docker() {
     echo_color blue "Installing Docker..."
-    #https://matt-wxw.medium.com/one-command-to-install-docker-and-docker-compose-on-ubuntu-febb8bc5cb72
-    sudo apt-get remove docker docker-engine docker.io containerd runc
-    sudo apt-get update && apt-get upgrade -y
-    sudo apt-get install -y \
-    ca-certificates \
-    gnupg \
-    lsb-release
-    sudo rm -rf /usr/share/keyrings/docker-archive-keyring.gpg
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update && apt-get upgrade -y
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-sudo usermod -a -G docker $USER
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.2.2/docker-compose-linux-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+
+    # Update
+    sudo apt-get update
+
+    # Add Docker's official GPG key
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+    # Add Docker's stable repository
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+    # Install Docker
+    sudo apt-get update
+    sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+    # Add current user to the docker group
+    sudo usermod -aG docker $USER
+
+    # Install Docker Compose
+    sudo curl -L "https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
 }
 
 install_apt_packages
