@@ -44,6 +44,7 @@ curl_apps() {
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
     echo_color blue "Installing NodeJS LTS..."
     # Make nvm command available to terminal
+    source ~/.zshrc
     source ~/.nvm/nvm.sh
     # Install NodeJS LTS
     nvm use --lts
