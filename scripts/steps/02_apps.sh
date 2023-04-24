@@ -49,6 +49,9 @@ curl_apps() {
     source ~/.bashrc
     source ~/.nvm/nvm.sh
     # Install NodeJS LTS
+    #nvm install 'lts/*'
+    nvm install --lts
+    nvm alias default node
     nvm use --lts
 
     echo_color blue "Installing CLI's..."

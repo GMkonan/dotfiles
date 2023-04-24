@@ -4,8 +4,8 @@ source ~/.zplug/init.zsh
 #zplug "mafredri/zsh-async", from:github
 #zplug "marlonrichert/zsh-autocomplete", from:github
 #zplug "plugins/git",   from:oh-my-zsh, defer:1
-zplug "zdharma-continuum/zsh-completions"
-zplug "zdharma-continuum/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
 zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
 
 # Load theme file
