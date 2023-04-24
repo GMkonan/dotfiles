@@ -31,8 +31,8 @@ done
 if [[ ${#missing_packages[@]} -gt 0 ]]; then
   echo_color blue "Installing missing packages with APT: ${missing_packages[*]}"
 
-  apt update --yes
-  apt install --yes --install-recommends "${missing_packages[@]}"
+  sudo apt update --yes
+  sudo apt install --yes --install-recommends "${missing_packages[@]}"
 fi
 
 }

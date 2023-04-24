@@ -16,7 +16,7 @@ run_scripts() {
   ln -nsf "$PWD"/configs/gitconfig ~/.gitconfig
 
 
-  ## concatenate all shell scripts together, so things like variables can be reused
+  # concatenate all shell scripts together, so things like variables can be reused
   cat "$PWD"/scripts/steps/*.sh > /tmp/dotfiles_script
   bash /tmp/dotfiles_script
 }
