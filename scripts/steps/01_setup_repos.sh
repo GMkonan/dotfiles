@@ -8,15 +8,15 @@ fi
 # Necessary for adding repositories for later packages to install
 install_wget() {
     if ! is_apt_package_installed wget; then
-        apt update --yes
-        apt install --yes --install-recommends wget
+        sudo apt update --yes
+        sudo apt install --yes --install-recommends wget
     fi
 }
 
 install_curl() {
     if ! is_apt_package_installed curl; then
-        apt update --yes
-        apt install --yes --install-recommends curl
+        sudo apt update --yes
+        sudo apt install --yes --install-recommends curl
     fi
 }
 

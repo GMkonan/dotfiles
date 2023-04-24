@@ -76,4 +76,4 @@ install_apt_packages
 
 curl_apps
 
-install_docker
+#install_docker
