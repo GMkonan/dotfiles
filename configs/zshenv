@@ -1,3 +1,4 @@
+# Doesn't need to be sourced in zshrc because is always sourced by zshrc first when starting new shell
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"

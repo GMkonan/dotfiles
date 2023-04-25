@@ -13,6 +13,7 @@ run_scripts() {
   echo_color blue "Creating symlinks..."
   ln -nsf "$PWD"/configs/zshenv ~/.zshenv
   ln -nsf "$PWD"/configs/zshrc ~/.zshrc
+  ln -nsf "$PWD"/configs/aliases ~/.aliases
   ln -nsf "$PWD"/configs/tmux.conf ~/.tmux.conf
   ln -nsf "$PWD"/configs/gitconfig ~/.gitconfig
 
