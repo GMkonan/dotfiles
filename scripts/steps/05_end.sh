@@ -19,7 +19,7 @@ install_font() {
     sudo fc-cache -f -v
 } 
 
-install_font
+#install_font
 
 # Maybe install font in this step because I'm lazy to create other step right now
 

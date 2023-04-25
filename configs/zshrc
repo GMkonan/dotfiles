@@ -27,7 +27,7 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-CONFIGS_DIR=$(dirname $(readlink ~/.zshenv))
+# Theme settings
 
 SPACESHIP_PROMPT_ORDER=(
   #user          # Username section
@@ -48,6 +48,17 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_DIR_COLOR="cyan"
+
+# Plugins settings
+
+# thefuck plugin
+eval $(thefuck --alias)
+
+# Bat plugin
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
+
+# Source stuff
 
 if [ -f "$HOME"/.aliases ]; then
   source "$HOME"/.aliases
