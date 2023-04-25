@@ -19,6 +19,10 @@ install_apt_packages() {
     code
     wget
     curl
+    bat
+    python3-dev
+    python3-pip
+    python3-setuptools
     google-chrome-stable
     spotify-client
   )
@@ -61,6 +65,10 @@ curl_apps() {
     curl -L https://github.com/airplanedev/cli/releases/latest/download/install.sh | sh
 }
 
+pip_apps() {
+  pip3 install thefuck --user
+}
+
 install_docker() {
     echo_color blue "Installing Docker..."
 
@@ -88,5 +96,7 @@ install_docker() {
 install_apt_packages
 
 curl_apps
+
+pip_apps
 
 install_docker

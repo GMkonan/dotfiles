@@ -14,6 +14,7 @@
 - sync visual studio code automatically
 - google extensions? (maybe just logging is enough)
   - extensions: 1pass, adblock, dark reader, languagetool
+- Install other zsh plugins (1pass)
 
 #### Things I do outside of script
 

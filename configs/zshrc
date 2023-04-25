@@ -8,7 +8,9 @@ zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
 zplug "so-fancy/diff-so-fancy"
+# Creates some alias for bat users
 zplug "sharkdp/bat"
+# Loads thefuck with cache support (faster)
 zplug "nvbn/thefuck"
 
 # Load theme file
