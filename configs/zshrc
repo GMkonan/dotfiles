@@ -7,11 +7,11 @@ zplug "plugins/git",   from:oh-my-zsh, defer:1
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
-zplug "so-fancy/diff-so-fancy"
+zplug "z-shell/zsh-diff-so-fancy", as:command, use:"bin/"
 # Creates some alias for bat users
-zplug "sharkdp/bat"
+zplug "fdellwing/zsh-bat"
 # Loads thefuck with cache support (faster)
-zplug "nvbn/thefuck"
+zplug "laggardkernel/zsh-thefuck"
 
 # Load theme file
 zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
@@ -52,11 +52,19 @@ SPACESHIP_DIR_COLOR="cyan"
 # Plugins settings
 
 # thefuck plugin
-eval $(thefuck --alias)
+if command -v thefuck &> /dev/null; then
+  eval $(thefuck --alias)
+else
+  echo_color yellow "Warning: thefuck not installed. Skipping it's configs"
+fi
 
 # Bat plugin
-mkdir -p ~/.local/bin
-ln -s /usr/bin/batcat ~/.local/bin/bat
+if command -v batcat &> /dev/null; then
+  mkdir -p ~/.local/bin
+  ln -s /usr/bin/batcat ~/.local/bin/bat
+else
+  echo_color yellow "Warning: bat not installed. Skipping it's configs"
+fi
 
 # Source stuff
 
