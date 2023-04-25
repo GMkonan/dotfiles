@@ -54,17 +54,12 @@ SPACESHIP_DIR_COLOR="cyan"
 # thefuck plugin
 if command -v thefuck &> /dev/null; then
   eval $(thefuck --alias)
-else
-  echo "Warning: thefuck not installed. Skipping it's configs"
-fi
+
 
 # Bat plugin
 if command -v batcat &> /dev/null; then
   mkdir -p ~/.local/bin
   ln -s /usr/bin/batcat ~/.local/bin/bat
-else
-  echo "Warning: bat not installed. Skipping it's configs"
-fi
 
 # Source stuff
 

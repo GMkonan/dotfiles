@@ -4,8 +4,8 @@
 
 ### Problems
 
-- nvm
-- spotify sudo
+- thefuck and bat configs should move out of zshrc (so the message doesnt appear everytime and just executed in install)
+-
 
 ### Ideas
 
@@ -14,7 +14,7 @@
 - sync visual studio code automatically
 - google extensions? (maybe just logging is enough)
   - extensions: 1pass, adblock, dark reader, languagetool
-- Install other zsh plugins (1pass)
+- Install other zsh plugins (1pass, tmuxinator, tmux-resurrect)
 
 #### Things I do outside of script
 
