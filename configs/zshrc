@@ -54,13 +54,13 @@ SPACESHIP_DIR_COLOR="cyan"
 # thefuck plugin
 if command -v thefuck &> /dev/null; then
   eval $(thefuck --alias)
-
+fi
 
 # Bat plugin
 if command -v batcat &> /dev/null; then
   mkdir -p ~/.local/bin
   ln -s /usr/bin/batcat ~/.local/bin/bat
-
+fi
 # Source stuff
 
 if [ -f "$HOME"/.aliases ]; then
