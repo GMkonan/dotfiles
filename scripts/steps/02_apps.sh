@@ -25,6 +25,9 @@ install_apt_packages() {
     python3-setuptools
     google-chrome-stable
     spotify-client
+    make
+    cargo
+    lua5.4
   )
 missing_packages=()
 

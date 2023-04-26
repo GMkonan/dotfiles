@@ -1,20 +1,17 @@
-- Make vscode sync automatically after install?
-- add extensions to google-chrome automatically
-- install a font and use in terminal via command line ubuntu
+## Debian based Dotfiles
 
-### Problems
+Hey! I format my PC a lot and it's so boring to reconfig everything every time to start working... So I automated! Right now it will only work on debian based distros (use of apt and etc) but if you use other OS you can still take a look on some general configs like my `zshrc` files and what plugins I use, a took a lot of inspiration from dotfiles that were made for MacOS so you can do the same here if you want 😀
 
-- thefuck and bat configs should move out of zshrc (so the message doesnt appear everytime and just executed in install)
--
+### Ideas 🚀
 
-### Ideas
+- multi-dotfiles (Would love to have a setup that works for Linux, macos and Windows WSL)
 
-- install tandem
-- install nerd font
-- sync visual studio code automatically
-- google extensions? (maybe just logging is enough)
-  - extensions: 1pass, adblock, dark reader, languagetool
+### Todo...?
+
+I don't always do what is in the todo list... 🥲
+
 - Install other zsh plugins (1pass, tmuxinator, tmux-resurrect)
+-
 
 #### Things I do outside of script
 
