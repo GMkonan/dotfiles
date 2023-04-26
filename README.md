@@ -11,7 +11,10 @@ Hey! I format my PC a lot and it's so boring to reconfig everything every time t
 I don't always do what is in the todo list... 🥲
 
 - Install other zsh plugins (1pass, tmuxinator, tmux-resurrect)
--
+- Install [LunarVim](https://www.lunarvim.org/docs/installation) (figure best way to automate)
+- Install [exa](https://the.exa.website/#installation)
+- Update tmux.conf
+- Install [Alacritty](https://github.com/alacritty/alacritty) (Will only install if I test it and like it)
 
 #### Things I do outside of script
 
