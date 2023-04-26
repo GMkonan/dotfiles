@@ -56,11 +56,12 @@ if command -v thefuck &> /dev/null; then
   eval $(thefuck --alias)
 fi
 
-# Bat plugin
-if command -v batcat &> /dev/null; then
-  mkdir -p ~/.local/bin
-  ln -s /usr/bin/batcat ~/.local/bin/bat
-fi
+# Persist zsh history for auto completion
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=1000
+setopt SHARE_HISTORY
+
 # Source stuff
 
 if [ -f "$HOME"/.aliases ]; then
