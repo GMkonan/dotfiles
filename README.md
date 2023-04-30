@@ -15,6 +15,7 @@ I don't always do what is in the todo list... 🥲
 - Install [exa](https://the.exa.website/#installation)
 - Update tmux.conf
 - Install [Alacritty](https://github.com/alacritty/alacritty) (Will only install if I test it and like it)
+- Configure LunarVim (how to symlink efficiently?) https://www.lunarvim.org/docs/configuration
 
 #### Things I do outside of script
 
@@ -22,3 +23,4 @@ Somethings that I do when setting up a new PC that are not included in the scrip
 
 - Download any more complicated to install apps
 - Download fonts (Jetbrain mono is a good one)
+- Run `tmux source ~/.tmux.conf` Inside a tmux session to load configs

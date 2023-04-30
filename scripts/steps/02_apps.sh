@@ -1,5 +1,8 @@
 #!/bin/bash 
 
+# Although the install_apt_packages is fine in my opinion I don't like
+# how the usage of functions is working here, refactor later...
+
 if [ "$FUNCTIONS_LOADED" != 'TRUE' ]; then
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
     source "${DIR}/../functions.sh"
@@ -27,7 +30,7 @@ install_apt_packages() {
     spotify-client
     make
     cargo
-    lua5.4
+    tmux
   )
 missing_packages=()
 
@@ -96,6 +99,27 @@ install_docker() {
     sudo chmod +x /usr/local/bin/docker-compose
 }
 
+# Need to make better lunarvim Installation...
+install_lunarvim () {
+  # Check if Neovim version 0.5.0 or higher is already installed
+  if ! nvim --version | grep -qE '^NVIM v0\.(5\.|6\.|7\.|8\.|9\.|10\.)'; then
+    # Install Neovim version 0.5.0 or higher
+    echo "Installing Neovim version 0.5.0 or higher..."
+    sudo apt-get update
+    sudo apt-get install -y software-properties-common
+    sudo add-apt-repository -y ppa:neovim-ppa/stable # Stable release, if needed use nightly (pass unstable instead of stable)
+    sudo apt-get update
+    sudo apt-get install -y neovim
+  fi
+
+  # Clone the LunarVim repository
+  git clone https://github.com/LunarVim/LunarVim.git ~/.config/nvim
+
+  # Install LunarVim dependencies
+  cd ~/.config/nvim
+  bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install.sh)
+}
+
 install_apt_packages
 
 curl_apps
@@ -103,3 +127,6 @@ curl_apps
 pip_apps
 
 install_docker
+
+install_lunarvim
+
