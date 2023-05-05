@@ -128,5 +128,5 @@ pip_apps
 
 install_docker
 
-install_lunarvim
+# install_lunarvim
 

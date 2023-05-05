@@ -10,6 +10,7 @@ Hey! I format my PC a lot and it's so boring to reconfig everything every time t
 
 I don't always do what is in the todo list... 🥲
 
+- Test if everything is working
 - Install other zsh plugins (1pass, tmuxinator, tmux-resurrect)
 - Install [LunarVim](https://www.lunarvim.org/docs/installation) (figure best way to automate)
 - Install [exa](https://the.exa.website/#installation)
@@ -22,5 +23,5 @@ I don't always do what is in the todo list... 🥲
 Somethings that I do when setting up a new PC that are not included in the script:
 
 - Download any more complicated to install apps
-- Download fonts (Jetbrain mono is a good one)
+- Download fonts (Jetbrain mono is a good one) (want to automate that)
 - Run `tmux source ~/.tmux.conf` Inside a tmux session to load configs
