@@ -25,3 +25,5 @@ Somethings that I do when setting up a new PC that are not included in the scrip
 - Download any more complicated to install apps
 - Download fonts (Jetbrain mono is a good one) (want to automate that)
 - Run `tmux source ~/.tmux.conf` Inside a tmux session to load configs
+
+https://dev.to/iggredible/the-easy-way-to-copy-text-in-tmux-319g

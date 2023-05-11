@@ -1,3 +1,4 @@
 alias ls="ls --color=auto"
 alias bat="catbat"
 alias lsa="ls --all"
+alias dcd="docker container rm $(docker container ls -a -q) -f; docker image rm $(docker image ls -a -q) -f; docker volume rm $(docker volume ls -q) -f;"
