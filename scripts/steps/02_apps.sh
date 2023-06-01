@@ -52,6 +52,9 @@ fi
 # Install curl apps
 
 curl_apps() {
+
+    # I may change nvm for fnm (rust-based) if they start supporting "use lts"
+    # https://github.com/Schniz/fnm
     echo_color blue "Installing nvm"
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
     echo_color blue "Installing NodeJS LTS..."

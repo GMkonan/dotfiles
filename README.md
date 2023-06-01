@@ -6,17 +6,16 @@ Hey! I format my PC a lot and it's so boring to reconfig everything every time t
 
 - multi-dotfiles (Would love to have a setup that works for Linux, macos and Windows WSL)
 
-### Todo...?
+### New tech
 
-I don't always do what is in the todo list... 🥲
+List of shit I may or may not include at one point in my dotfiles
 
-- Test if everything is working
-- Install other zsh plugins (1pass, tmuxinator, tmux-resurrect)
-- Install [LunarVim](https://www.lunarvim.org/docs/installation) (figure best way to automate)
+- zsh plugins (1pass, tmuxinator, tmux-resurrect)
+- change nvm to [fnm](https://github.com/Schniz/fnm)
+- Install [github CLI](https://github.com/cli/cli)
+- Install [LunarVim](https://www.lunarvim.org/docs/installation)
 - Install [exa](https://the.exa.website/#installation)
-- Update tmux.conf
-- Install [Alacritty](https://github.com/alacritty/alacritty) (Will only install if I test it and like it)
-- Configure LunarVim (how to symlink efficiently?) https://www.lunarvim.org/docs/configuration
+- Install [Alacritty](https://github.com/alacritty/alacritty)
 
 #### Things I do outside of script
 
@@ -26,4 +25,4 @@ Somethings that I do when setting up a new PC that are not included in the scrip
 - Download fonts (Jetbrain mono is a good one) (want to automate that)
 - Run `tmux source ~/.tmux.conf` Inside a tmux session to load configs
 
-https://dev.to/iggredible/the-easy-way-to-copy-text-in-tmux-319g
+https://github.com/cli/cli
