@@ -72,6 +72,9 @@ curl_apps() {
     curl -L https://fly.io/install.sh | sh
     # Airplane
     curl -L https://github.com/airplanedev/cli/releases/latest/download/install.sh | sh
+
+    # Deno
+    curl -fsSL https://deno.land/x/install/install.sh | sh
 }
 
 pip_apps() {
