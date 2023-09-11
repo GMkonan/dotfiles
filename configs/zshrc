@@ -71,3 +71,9 @@ fi
 if [ -f "$HOME"/.secrets ]; then
   source "$HOME"/.secrets
 fi
+# bun completions
+[ -s "/home/gmkonan/.bun/_bun" ] && source "/home/gmkonan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

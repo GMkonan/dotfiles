@@ -31,6 +31,7 @@ install_apt_packages() {
     make
     cargo
     tmux
+    guix
   )
 missing_packages=()
 
@@ -105,25 +106,37 @@ install_docker() {
     sudo chmod +x /usr/local/bin/docker-compose
 }
 
-# Need to make better lunarvim Installation...
-install_lunarvim () {
-  # Check if Neovim version 0.5.0 or higher is already installed
-  if ! nvim --version | grep -qE '^NVIM v0\.(5\.|6\.|7\.|8\.|9\.|10\.)'; then
-    # Install Neovim version 0.5.0 or higher
-    echo "Installing Neovim version 0.5.0 or higher..."
-    sudo apt-get update
-    sudo apt-get install -y software-properties-common
-    sudo add-apt-repository -y ppa:neovim-ppa/stable # Stable release, if needed use nightly (pass unstable instead of stable)
-    sudo apt-get update
-    sudo apt-get install -y neovim
+install_lazyvim () {
+  # https://superuser.com/questions/1752808/cant-install-neovim-v0-8-0-on-ubuntu
+
+  # Check if Neovim version 0.8.0 or higher is already installed
+  if ! nvim --version | grep -qE '^NVIM v0\.(8\.|9\.|10\.)'; then
+    # Install Neovim version 0.8.0 or higher
+    echo "Installing Neovim version 0.8.0 or higher..."
+    # get updated package
+    wget -qO - 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
+    echo "deb [arch=all,$(dpkg --print-architecture) signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
+    # Install neovim
+    sudo apt update
+    sudo apt upgrade
+    sudo apt install -y neovim
+
+
+    # Backup configs in case of fuck up
+    # required
+    mv ~/.config/nvim{,.bak}
+
+    # optional but recommended
+    mv ~/.local/share/nvim{,.bak}
+    mv ~/.local/state/nvim{,.bak}
+    mv ~/.cache/nvim{,.bak}
+
+    # clone lazyvim
+    git clone https://github.com/LazyVim/starter ~/.config/nvim
+
+    # Remove git folder from lazyvim template starter repo
+    rm -rf ~/.config/nvim/.git
   fi
-
-  # Clone the LunarVim repository
-  git clone https://github.com/LunarVim/LunarVim.git ~/.config/nvim
-
-  # Install LunarVim dependencies
-  cd ~/.config/nvim
-  bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/master/utils/installer/install.sh)
 }
 
 install_apt_packages
@@ -134,5 +147,5 @@ pip_apps
 
 install_docker
 
-# install_lunarvim
+# install_lazyvim
 
