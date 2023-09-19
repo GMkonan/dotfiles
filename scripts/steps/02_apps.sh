@@ -8,6 +8,14 @@ if [ "$FUNCTIONS_LOADED" != 'TRUE' ]; then
     source "${DIR}/../functions.sh"
 fi
 
+# This should probably be for all apt-get apps actually
+install_latest_git() {
+  echo_color blue "Installing Latest git via ppa..."
+  sudo apt-add-repository ppa:git-core/ppa
+  sudo apt-get update
+  sudo apt-get install git
+}
+
 install_apt_packages() {
     # Install apt packages
     echo_color blue "Installing APT packages..."
@@ -138,6 +146,8 @@ install_lazyvim () {
     rm -rf ~/.config/nvim/.git
   fi
 }
+
+install_latest_git
 
 install_apt_packages
 
