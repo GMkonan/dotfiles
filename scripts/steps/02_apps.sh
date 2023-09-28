@@ -62,19 +62,17 @@ fi
 
 curl_apps() {
 
-    # I may change nvm for fnm (rust-based) if they start supporting "use lts"
-    # https://github.com/Schniz/fnm
-    echo_color blue "Installing nvm"
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+    echo_color blue "Installing fnm"
+    # fnm
+    curl -fsSL https://fnm.vercel.app/install | bash
+    
     echo_color blue "Installing NodeJS LTS..."
-    # Make nvm command available to terminal
+
     source ~/.bashrc
-    source ~/.nvm/nvm.sh
+
     # Install NodeJS LTS
-    #nvm install 'lts/*'
-    nvm install --lts
-    nvm alias default node
-    nvm use --lts
+    # https://github.com/Schniz/fnm/issues/935
+    fnm install --lts
 
     echo_color blue "Installing CLI's..."
     # Fly.io
