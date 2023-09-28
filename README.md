@@ -10,6 +10,7 @@ Hey! I format my PC a lot and it's so boring to reconfig everything every time t
 
 List of shit I may or may not include at one point in my dotfiles
 
+- [] setup auth token automatically for graphite
 - Install [github CLI](https://github.com/cli/cli) (and extension "gh extension install https://github.com/nektos/gh-act")
 - Install [graphite CLI](https://app.graphite.dev/)
 - zsh plugins (1pass, tmuxinator, tmux-resurrect)

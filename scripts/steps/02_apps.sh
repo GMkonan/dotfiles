@@ -40,6 +40,9 @@ install_apt_packages() {
     cargo
     tmux
     guix
+    build-essential
+    procps
+    file
   )
 missing_packages=()
 
@@ -84,10 +87,20 @@ curl_apps() {
 
     # Deno
     curl -fsSL https://deno.land/x/install/install.sh | sh
+
+    # Bun
+    curl -fsSL https://bun.sh/install | bash
+
+    # HomeBrew
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
 
 pip_apps() {
   pip3 install thefuck --user
+}
+
+brew_apps() {
+  brew install withgraphite/tap/graphite
 }
 
 install_docker() {
@@ -159,3 +172,4 @@ install_docker
 
 # install_lazyvim
 
+brew_apps
