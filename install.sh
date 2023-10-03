@@ -13,6 +13,7 @@ create_symlinks() {
   ln -nsf "$PWD"/configs/aliases ~/.aliases
   ln -nsf "$PWD"/configs/tmux.conf ~/.tmux.conf
   ln -nsf "$PWD"/configs/gitconfig ~/.gitconfig
+  ln -nsf "$PWD"/configs/nvim ~/.config/nvim
 }
 
 run_scripts() {

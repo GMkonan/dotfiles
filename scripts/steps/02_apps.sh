@@ -26,16 +26,12 @@ install_apt_packages() {
     gnupg
     lsb-release
     git
-    zsh
-    code
     wget
     curl
     bat
     python3-dev
     python3-pip
     python3-setuptools
-    google-chrome-stable
-    spotify-client
     make
     cargo
     tmux
@@ -61,9 +57,7 @@ fi
 
 }
 
-# Install curl apps
-
-curl_apps() {
+curl_apps1() {
 
     echo_color blue "Installing fnm"
     # fnm
@@ -89,16 +83,7 @@ curl_apps() {
     # Bun
     curl -fsSL https://bun.sh/install | bash
 
-    # HomeBrew
-    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-}
 
-pip_apps() {
-  pip3 install thefuck --user
-}
-
-brew_apps() {
-  brew install withgraphite/tap/graphite
 }
 
 install_docker() {
@@ -158,16 +143,92 @@ install_lazyvim () {
   fi
 }
 
+####### New Stuff ########
+
+install_flatpak() {
+  echo_color blue "Installing flatpak"
+
+  sudo apt install flatpak
+
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+}
+
+install_brew() {
+  # HomeBrew
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # Add brew to path
+  (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/gmkonan/.zprofile
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+}
+
+brew_apps() {
+  brew install withgraphite/tap/graphite
+  brew install zsh
+  brew install fnm
+  brew install flyctl
+  brew install deno
+}
+
+flatpak_apps() {
+  readonly apps=(
+    'com.google.Chrome'
+    'com.onepassword.OnePassword'
+    'com.visualstudio.code'
+    'org.flameshot.Flameshot'
+    'org.videolan.VLC'
+    'com.spotify.Client'
+    'com.valvesoftware.Steam'
+    'com.discordapp.Discord'
+    'com.slack.Slack'
+    'chat.tandem.Client'
+  )
+
+  # Update currently installed apps
+  echo_color blue "Updating installed flatpak apps"
+  flatpak update --assumeyes --noninteractive
+
+  # Install each app listed above (if not already installed)
+  echo_color blue "Installing apps defined in manifest"
+  for app in ${apps[@]}; do
+    flatpak install flathub $app
+  done
+}
+
+install_node() {
+  echo_color blue "Installing NodeJS LTS via fnm..."
+
+  source ~/.bashrc
+
+  fnm install --lts
+}
+
+curl_apps() {
+    echo_color blue "Installing curl apps"
+
+    # Airplane
+    curl -L https://github.com/airplanedev/cli/releases/latest/download/install.sh | sh
+
+    # Bun
+    curl -fsSL https://bun.sh/install | bash
+
+
+}
+
+# Call functions
+
 install_latest_git
 
 install_apt_packages
 
-curl_apps
+install_brew
 
-pip_apps
+install_flatpak
 
-install_docker
-
-# install_lazyvim
+flatpak_apps
 
 brew_apps
+
+curl_apps
+
+install_docker
