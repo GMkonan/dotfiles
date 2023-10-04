@@ -155,8 +155,9 @@ install_flatpak() {
 }
 
 install_brew() {
+  echo_color blue "Installing Brew"
   # HomeBrew
-  NONINTERACTIVE=1 sudo -u gmkonan /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  NONINTERACTIVE=1 sudo -u $USER /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   # Add brew to path
   (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/gmkonan/.zprofile
@@ -164,20 +165,20 @@ install_brew() {
 }
 
 brew_apps() {
-  brew install withgraphite/tap/graphite
-  brew install zsh
-  brew install fnm
-  brew install flyctl
-  brew install deno
+  echo_color blue "Installing defined Brew apps"
+  sudo -u $USER brew install withgraphite/tap/graphite
+  sudo -u $USER brew install zsh
+  sudo -u $USER brew install fnm
+  sudo -u $USER brew install flyctl
+  sudo -u $USER brew install deno
 }
 
 flatpak_apps() {
   readonly apps=(
     'com.google.Chrome'
-    'com.onepassword.OnePassword'
     'com.visualstudio.code'
     'org.flameshot.Flameshot'
-    'org.videolan.VLC'
+    #'org.videolan.VLC'
     'com.spotify.Client'
     'com.valvesoftware.Steam'
     'com.discordapp.Discord'
@@ -192,7 +193,7 @@ flatpak_apps() {
   # Install each app listed above (if not already installed)
   echo_color blue "Installing apps defined in manifest"
   for app in ${apps[@]}; do
-    flatpak install flathub $app
+    flatpak install --assumeyes --noninteractive flathub $app
   done
 }
 
@@ -212,8 +213,6 @@ curl_apps() {
 
     # Bun
     curl -fsSL https://bun.sh/install | bash
-
-
 }
 
 # Call functions
@@ -231,5 +230,7 @@ flatpak_apps
 brew_apps
 
 curl_apps
+
+install_node
 
 install_docker

@@ -10,13 +10,6 @@ Hey! I format my PC a lot and it's so boring to reconfig everything every time t
 
 List of shit I may or may not include at one point in my dotfiles
 
-- [] setup auth token automatically for graphite
-- Install [github CLI](https://github.com/cli/cli) (and extension "gh extension install https://github.com/nektos/gh-act")
-- Install [graphite CLI](https://app.graphite.dev/)
-- zsh plugins (1pass, tmuxinator, tmux-resurrect)
-- change nvm to [fnm](https://github.com/Schniz/fnm)
-- Install [exa](https://the.exa.website/#installation)
-- Install [Alacritty](https://github.com/alacritty/alacritty)
 
 #### Things I do outside of script
 
@@ -27,3 +20,7 @@ Somethings that I do when setting up a new PC that are not included in the scrip
 - Run `tmux source ~/.tmux.conf` Inside a tmux session to load configs
 
 https://github.com/cli/cli
+
+
+### Todo
+- [] Any easy way to install 1password?
