@@ -148,14 +148,15 @@ install_lazyvim () {
 install_flatpak() {
   echo_color blue "Installing flatpak"
 
-  sudo apt install flatpak
+  sudo apt install flatpak -y
 
+  # https://github.com/flathub/flathub/issues/2580
   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 }
 
 install_brew() {
   # HomeBrew
-  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  NONINTERACTIVE=1 sudo -u gmkonan /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   # Add brew to path
   (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/gmkonan/.zprofile
