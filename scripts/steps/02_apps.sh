@@ -11,9 +11,9 @@ fi
 # This should probably be for all apt-get apps actually
 install_latest_git() {
   echo_color blue "Installing Latest git via ppa..."
-  sudo apt-add-repository ppa:git-core/ppa
+  sudo apt-add-repository -y ppa:git-core/ppa
   sudo apt-get update
-  sudo apt-get install git
+  sudo apt-get install git -y
 }
 
 install_apt_packages() {
@@ -157,7 +157,7 @@ install_flatpak() {
 install_brew() {
   echo_color blue "Installing Brew"
   # HomeBrew
-  NONINTERACTIVE=1 sudo -u $USER /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  sudo -u $USER NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   # Add brew to path
   (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/gmkonan/.zprofile
