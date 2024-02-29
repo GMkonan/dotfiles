@@ -18,6 +18,7 @@ https://github.com/cli/cli
 ### Todo
 
 - Finish making linux and mac dotifiles.
+- copy nvim folder to .config/ (because symlink doesnt work...)
 - making good install script (conditions, symlinks etc)
 - configuring tmux.conf
 - understanding more about brewfiles, brew bundle stuff
