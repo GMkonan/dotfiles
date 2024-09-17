@@ -1,30 +1,35 @@
-# WIP
+### Konan dotfiles
+- kitty (probably inside a .config)
+- nix
+- mac
+- devcontainer
 
-Making configs for mac too, understanding stuff about brewfiles. making a good installation script (bash?). Work in progress.
+### structure
+- config => only has stuff that goes inside the .config folder (nvim, kitty)
 
-## Debian and MAC based Dotfiles
 
-Hey! I format my PC a lot and it's so boring to reconfig everything every time to start working... So I automated! Right now it will only work on debian based distros (use of apt and etc) but if you use other OS you can still take a look on some general configs like my `zshrc` files and what plugins I use, a took a lot of inspiration from dotfiles that were made for MacOS so you can do the same here if you want 😀
 
-#### Things I do outside of script
 
-Somethings that I do when setting up a new PC that are not included in the script:
+# BEGIN_KITTY_THEME
+# theme taken from https://github.com/kovidgoyal/kitty-themes
+# just run `kitty +kitten themes`
+# Catppuccin-Mocha
+include current-theme.conf
+# END_KITTY_THEME
 
-- Download fonts (Jetbrain mono is a good one) (want to automate that) (install font via brew cask fonts?)
-- Run `tmux source ~/.tmux.conf` Inside a tmux session to load configs
 
-https://github.com/cli/cli
+# BEGIN_KITTY_FONTS
+# theme chosen with the command `kitten choose-fonts`
+font_family      family="JetBrains Mono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+font_size 12.5
+# END_KITTY_FONTS
 
-### Todo
-
-- Finish making linux and mac dotifiles.
-- copy nvim folder to .config/ (because symlink doesnt work...)
-- making good install script (conditions, symlinks etc)
-- configuring tmux.conf
-- understanding more about brewfiles, brew bundle stuff
-- configs should be env, machine based? or general? or mix?
-- symlink brewfile to home
-
-### Links
-
-- https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f
+# Tab config
+tab_bar_min_tabs            1
+tab_bar_edge                bottom
+tab_bar_style               powerline
+tab_powerline_style         slanted
+tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
