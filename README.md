@@ -11,5 +11,9 @@
 
 
 
+### TODO
+- fzf
+- understand zsh aliases and stuff
+- zsh slow? zplug? etc
 
 
