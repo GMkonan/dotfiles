@@ -1,0 +1,5 @@
+# lsd aliases
+alias ls="lsd -A"
+
+# fzf aliases
+alias sd="cd ~ && cd \$(find * -type d | fzf)"
