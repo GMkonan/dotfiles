@@ -1,0 +1,42 @@
+#This is Git's per-user configuration file.
+[user]
+	name = GMkonan
+	email = guilhemont@hotmail.com
+
+[alias]
+	graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+
+[apply]
+
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+[credential]
+	helper = osxkeychain
+	credentialStore = gpg
+[init]
+	defaultBranch = main
+[url "https://github"]
+	insteadOf = ssh://git@github
+# diff-so-fancy config
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	compression = 0
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[http]
+	postBuffer = 157286400

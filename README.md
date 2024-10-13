@@ -1,23 +1,26 @@
-### Konan dotfiles
-- kitty (probably inside a .config)
-- nix
-    - 
-- mac
-    - brewfile
-- devcontainer
+### Konan dotfiles (always wip)
+config is for general .config stuff. Rest of general dotfiles is on base while target specific are divided in directories (nix, mac, devcontainer)
 
-### structure
-- config => only has stuff that goes inside the .config folder (nvim, kitty)
+### Mac
+mainly installing using brew (brewfile)
 
+### Nix
+Using flakes
+(still have to pass stuff from my laptop to here tho)
 
+### Devcontainer
+completely WIP but will probably just borrow my terminal config in a minimalistic way
+
+### General terminal stuff
+- kitty (details on kitty.conf but colorscheme = catppuccin and font = Jetbrains Mono)
+- zoxide
+- lsd
+- fzf (+ ripgrep)
+- nvim using lazy (nvim config included, based on kickstart.nvim)
+- tmux
+- lazy docker (tui)
 
 ### TODO
-- tn command to create new tmux sesh on base name
-- open nvim directly in fzf or use fzf for it? Just to get first file selector better than the standard "nvim .".
-- fzf asking for permissions
-- fzf (config it and alias possibly) (exp more)
-- lsd (config it and alias)
-- understand zsh aliases and stuff
-- zsh slow? zplug? etc
-
-
+- change PS1
+- ascii image of my pixel art?
+- change zsh theme (currently using the p10k)

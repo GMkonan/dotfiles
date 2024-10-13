@@ -59,3 +59,4 @@ alias ggovm="$GOPATH/bin/g";
 
 # fzf
 source <(fzf --zsh)
+eval "$(zoxide init zsh)"
