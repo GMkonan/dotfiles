@@ -13,6 +13,7 @@ completely WIP but will probably just borrow my terminal config in a minimalisti
 
 ### General terminal stuff
 - kitty (details on kitty.conf but colorscheme = catppuccin and font = Jetbrains Mono)
+- zsh
 - zoxide
 - lsd
 - fzf (+ ripgrep)
@@ -24,3 +25,6 @@ completely WIP but will probably just borrow my terminal config in a minimalisti
 - change PS1
 - ascii image of my pixel art?
 - change zsh theme (currently using the p10k)
+
+### Links
+- https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f
