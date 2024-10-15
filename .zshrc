@@ -5,7 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH="/opt/homebrew/bin:$PATH"
+# Path to dotfiles
+export DOTFILES=$HOME/code/projects/dotfiles
+# Path to zsh_custom (files with .zsh will be loaded by default if they are inside the folder specified)
+ZSH_CUSTOM=$DOTFILES
 
 zplug "plugins/git",   from:oh-my-zsh, defer:1
 zplug "zsh-users/zsh-completions"
@@ -46,17 +49,10 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # bun completions
 [ -s "/Users/gmkonan/.bun/_bun" ] && source "/Users/gmkonan/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# go and go vm (via g install)
-export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
-alias ggovm="$GOPATH/bin/g";
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # fzf
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
+. "/Users/gmkonan/.deno/env"

@@ -25,6 +25,6 @@ completely WIP but will probably just borrow my terminal config in a minimalisti
 - change PS1
 - ascii image of my pixel art?
 - change zsh theme (currently using the p10k)
-
+- change `.aliases` to `aliases.zsh`
 ### Links
 - https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f
