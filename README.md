@@ -21,10 +21,16 @@ completely WIP but will probably just borrow my terminal config in a minimalisti
 - tmux
 - lazy docker (tui)
 
+### Nvim
+My neovim config is here but since it's a bigger configuration it has it's own readme you can look it up
+
 ### TODO
 - change PS1
 - ascii image of my pixel art?
 - change zsh theme (currently using the p10k)
 - change `.aliases` to `aliases.zsh`
+- change cd to z from zoxide
+
 ### Links
 - https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f
+
