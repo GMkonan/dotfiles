@@ -2,6 +2,7 @@
 .zsh_history
 .env
 .env.local
+.DS_Store
 
 # nvim
 lazy-lock.json

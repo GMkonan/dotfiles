@@ -1,4 +1,4 @@
-### Konan dotfiles (always wip)
+# Konan dotfiles (always wip)
 config is for general .config stuff. Rest of general dotfiles is on base while target specific are divided in directories (nix, mac, devcontainer)
 
 ### Mac
@@ -25,11 +25,20 @@ completely WIP but will probably just borrow my terminal config in a minimalisti
 My neovim config is here but since it's a bigger configuration it has it's own readme you can look it up
 
 ### TODO
-- change PS1
 - ascii image of my pixel art?
-- change zsh theme (currently using the p10k)
+- toggle on and off opacity to show and not show image
+    - create it using a python script (kitten)
 - change `.aliases` to `aliases.zsh`
 - change cd to z from zoxide
+- change more of the p10k zsh config
+
+- themes that I may use in ZSH
+    - bira
+    * yeknomhtooms
+    * pure
+    * guezwhoz
+    * darkblood
+    * duellj
 
 ### Links
 - https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f
