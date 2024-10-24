@@ -110,6 +110,9 @@ require('lazy').setup({
   -- Tab out of parenthesis, curly braces etc
   require 'plugins/tabout',
 
+  -- surround words/code in () {} "" etc easily
+  require 'plugins/surround',
+
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
