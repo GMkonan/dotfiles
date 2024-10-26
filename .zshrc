@@ -16,6 +16,8 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
 zplug "so-fancy/diff-so-fancy", as:command, use:"diff-so-fancy"
 
+unset ZSH_AUTOSUGGEST_USE_ASYNC
+
 # Load theme file
 zplug romkatv/powerlevel10k, as:theme, depth:1
 
