@@ -6,6 +6,7 @@ Initially based on kickstart nvim.
 - [NVIM] add git plugins to nvim
 - [NVIM] Check inspirations for more different plugins
     - lazyvim docs with their plugins
+- make the plugin import better on `init.lua`
 
 ### Plugins
 - nvim-cmp (autocompletion)

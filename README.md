@@ -4,9 +4,8 @@ config is for general .config stuff. Rest of general dotfiles is on base while t
 ### Mac
 mainly installing using brew (brewfile)
 
-### Nix
-Using flakes
-(still have to pass stuff from my laptop to here tho)
+### Flake (NixOS)
+Using flakes (very early stages)
 
 ### Devcontainer
 completely WIP but will probably just borrow my terminal config in a minimalistic way
