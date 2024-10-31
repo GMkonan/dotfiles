@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # Path to dotfiles
 export DOTFILES=$HOME/code/projects/dotfiles
@@ -37,7 +37,7 @@ function plugin-load {
 
 repos=(
   # List plugins by order you want them to load
-romkatv/powerlevel10k
+# romkatv/powerlevel10k
 
 so-fancy/diff-so-fancy
 
@@ -71,7 +71,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 [ -s "/Users/gmkonan/.bun/_bun" ] && source "/Users/gmkonan/.bun/_bun"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # fzf
 source <(fzf --zsh)
@@ -79,3 +79,4 @@ eval "$(zoxide init zsh)"
 source "/Users/gmkonan/.deno/env"
 
 source $DOTFILES/zsh/*.zsh
+eval "$(oh-my-posh init zsh --config $DOTFILES/zsh/theme.omp.json)"

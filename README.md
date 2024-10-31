@@ -13,6 +13,7 @@ completely WIP but will probably just borrow my terminal config in a minimalisti
 ### General terminal stuff
 - kitty (details on kitty.conf but colorscheme = catppuccin and font = Jetbrains Mono)
 - zsh
+- oh-my-posh (custom theme inside zsh/)
 - zoxide
 - lsd
 - fzf (+ ripgrep)
