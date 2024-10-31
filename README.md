@@ -25,19 +25,29 @@ My neovim config is here but since it's a bigger configuration it has it's own r
 
 ### TODO
 - ascii image of my pixel art?
-- toggle on and off opacity to show and not show image
-    - create it using a python script (kitten)
-- change `.aliases` to `aliases.zsh`
+- toggle on and off opacity to show and not show image (yabai?)
 - change cd to z from zoxide
 - change more of the p10k zsh config
+- nvim fix config for Nix
+- change bottom bars (nvim and tmux)
+- install automatically Determinate System’s Nix Installer for the shell
 
-- themes that I may use in ZSH
-    - bira
-    * yeknomhtooms
-    * pure
-    * guezwhoz
-    * darkblood
-    * duellj
+### ideas
+- Nix
+    - rofi (wind and app manager)
+    - window tiling manager (hyperland and sway)
+    - astal
+    - dunst
+
+- mac
+    - yabai
+    - simple-bar
+    - sk-hd?
+
+- zsh
+    - theme pure
+    - starship
+    - oh my posh?
 
 ### Links
 - https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f

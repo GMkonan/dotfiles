@@ -10,27 +10,46 @@ export DOTFILES=$HOME/code/projects/dotfiles
 # Path to zsh_custom (files with .zsh will be loaded by default if they are inside the folder specified)
 ZSH_CUSTOM=$DOTFILES
 
-zplug "plugins/git",   from:oh-my-zsh, defer:1
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
-zplug "so-fancy/diff-so-fancy", as:command, use:"diff-so-fancy"
+ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.config/zsh}/plugins}
+
+# https://github.com/mattmc3/zsh_unplugged#question-how-do-i-load-my-plugins-with-hypersonic-speed-rocket
+# Zsh Plugins
+function plugin-load {
+  local repo plugdir initfile initfiles=()
+  : ${ZPLUGINDIR:=${ZDOTDIR:-~/.config/zsh}/plugins}
+  for repo in $@; do
+    plugdir=$ZPLUGINDIR/${repo:t}
+    initfile=$plugdir/${repo:t}.plugin.zsh
+    if [[ ! -d $plugdir ]]; then
+      echo "Cloning $repo..."
+      git clone -q --depth 1 --recursive --shallow-submodules \
+        https://github.com/$repo $plugdir
+    fi
+    if [[ ! -e $initfile ]]; then
+      initfiles=($plugdir/*.{plugin.zsh,zsh-theme,zsh,sh}(N))
+      (( $#initfiles )) || { echo >&2 "No init file '$repo'." && continue }
+      ln -sf $initfiles[1] $initfile
+    fi
+    fpath+=$plugdir
+    (( $+functions[zsh-defer] )) && zsh-defer . $initfile || . $initfile
+  done
+}
+
+repos=(
+  # List plugins by order you want them to load
+romkatv/powerlevel10k
+
+so-fancy/diff-so-fancy
+
+# Load those last
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+zdharma-continuum/fast-syntax-highlighting
+  )
+
+plugin-load $repos
 
 unset ZSH_AUTOSUGGEST_USE_ASYNC
-
-# Load theme file
-zplug romkatv/powerlevel10k, as:theme, depth:1
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
 
 # Persist zsh history for auto completion
 HISTFILE=~/.zsh_history
@@ -57,4 +76,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # fzf
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
-. "/Users/gmkonan/.deno/env"
+source "/Users/gmkonan/.deno/env"
+
+source $DOTFILES/zsh/*.zsh
