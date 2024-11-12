@@ -78,5 +78,6 @@ source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 source "/Users/gmkonan/.deno/env"
 
-source $DOTFILES/zsh/*.zsh
+# source $DOTFILES/zsh/*.zsh
+for f ($DOTFILES/zsh/**/*.zsh(N.))  source $f
 eval "$(oh-my-posh init zsh --config $DOTFILES/zsh/theme.omp.json)"

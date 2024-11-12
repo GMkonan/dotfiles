@@ -7,6 +7,7 @@ Initially based on kickstart nvim.
 - [NVIM] Check inspirations for more different plugins
     - lazyvim docs with their plugins
 - make the plugin import better on `init.lua`
+- increase font size when in neovim? Or maybe just directly in terminal
 
 ### Plugins
 - nvim-cmp (autocompletion)

@@ -1,5 +1,4 @@
 # All paths
-echo "paths"
 
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
