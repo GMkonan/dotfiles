@@ -1,7 +1,7 @@
 # Nix stuff
 
-## todo
-- separate stuff from default /etc/nixos and put on repo (dotfiles on the nix dirrrr)
+## todo && issues
+- Fix python install (check install insecure, some configs have it)
 
 rebuild flake command:
 sudo nixos-rebuild switch --flake /etc/nixos#default

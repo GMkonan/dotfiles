@@ -19,7 +19,7 @@
   gcc
   gnumake
   nodejs
-  python
+  # python
 
   # CLI
   wget
