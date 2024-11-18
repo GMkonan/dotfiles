@@ -1,7 +1,11 @@
 # Nix stuff
 
 ## todo && issues
+- home manager stuff (is it even worth it?)
 - Fix python install (check install insecure, some configs have it)
+- fix font (jetbrains and commit)
+- fix consistence between dotfiles here and mac (rebase here)
+
 
 rebuild flake command:
 sudo nixos-rebuild switch --flake /etc/nixos#default
@@ -10,10 +14,10 @@ now command should be:
 sudo nixos-rebuild switch --flake ~/code/dotfiles/flake#default
 
 ### things I wanna install
-- brave
-- kitty
-- neovim
-
+- hyprland
+- waybar
+- rofi
+- ags
 
 ### Useful stuff
 - https://www.youtube.com/watch?v=a67Sv4Mbxmc
