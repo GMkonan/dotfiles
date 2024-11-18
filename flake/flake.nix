@@ -10,15 +10,22 @@
      };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+    # should probably create a support for darwin at some point
+    let
+      system = "x86_64-linux";
+    in {
+
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./nixos/configuration.nix
-        inputs.home-manager.nixosModules.default
       ];
     };
 
-    
+    homeConfigurations.konan = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.${system};
+      modules = [ ./home-manager/home.nix ];
+    };
   };
 }

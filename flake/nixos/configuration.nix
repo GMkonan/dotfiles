@@ -57,12 +57,12 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "konan" = import ../home.nix;
-    };
-  };
+  # home-manager = {
+  #   extraSpecialArgs = { inherit inputs; };
+  #   users = {
+  #     "konan" = import ../home.nix;
+  #   };
+  # };
 
 
 
