@@ -1,6 +1,12 @@
 # lsd aliases
 alias ls='lsd -A'
 
+# zoxide aliases
+alias cd='z'
+
+# bat aliases
+alias cat='bat'
+
 # fzf aliases
 alias sd='cd ~ && cd \$(find * -type d | fzf)'
 

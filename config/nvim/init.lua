@@ -61,65 +61,61 @@ require('lazy').setup({
   -- Then, because we use the `config` key, the configuration only runs
   -- after the plugin has been loaded:
   --  config = function() ... end
-  require 'plugins/which-key',
-
-  require 'plugins/telescope',
-
-  -- LSP Plugins
-  require 'plugins/lsp',
-
-  -- autoformat
-  require 'plugins/autoformat',
-
-  -- auto completes (cmp)
-  require 'plugins/complete',
-
-  -- theme
-  require 'plugins/colorscheme',
-
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-
-  -- mini utilities
-  require 'plugins/mini',
-
-  -- highlight/edit/nav code
-  require 'plugins/treesitter',
-
-  -- file explorer buffer like editing with oil
-  require 'plugins/oil',
-
-  -- Tree file explorer
-  require 'plugins/neotree',
-
-  -- comments
-  require 'plugins/comment',
-
-  -- autopairs
-  require 'plugins/autopairs',
-
-  -- render markdown
-  require 'plugins/rendermd',
-
-  -- neovim line config
-  require 'plugins/line',
-
-  -- Add visual color to hex codes
-  require 'plugins/colorizer',
-
-  -- Tab out of parenthesis, curly braces etc
-  require 'plugins/tabout',
-
-  -- surround words/code in () {} "" etc easily
-  require 'plugins/surround',
-
+  -- require 'plugins/which-key',
+  --
+  -- require 'plugins/telescope',
+  --
+  -- -- LSP Plugins
+  -- require 'plugins/lsp',
+  --
+  -- -- autoformat
+  -- require 'plugins/autoformat',
+  --
+  -- -- auto completes (cmp)
+  -- require 'plugins/complete',
+  --
+  -- -- theme
+  -- require 'plugins/colorscheme',
+  --
+  -- -- Highlight todo, notes, etc in comments
+  -- { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  --
+  -- -- mini utilities
+  -- require 'plugins/mini',
+  --
+  -- -- highlight/edit/nav code
+  -- require 'plugins/treesitter',
+  --
+  -- -- file explorer buffer like editing with oil
+  -- require 'plugins/oil',
+  --
+  -- -- Tree file explorer
+  -- require 'plugins/neotree',
+  --
+  -- -- comments
+  -- require 'plugins/comment',
+  --
+  -- -- autopairs
+  -- require 'plugins/autopairs',
+  --
+  -- -- render markdown
+  -- require 'plugins/rendermd',
+  --
+  -- -- neovim line config
+  -- require 'plugins/line',
+  --
+  -- -- Add visual color to hex codes
+  -- require 'plugins/colorizer',
+  --
+  -- -- Tab out of parenthesis, curly braces etc
+  -- require 'plugins/tabout',
+  --
+  -- -- surround words/code in () {} "" etc easily
+  -- require 'plugins/surround',
+  --
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/plugins/*.lua`
   --    This is the easiest way to modularize your config.
-  --
-  --  Uncomment the following line and add your plugins to `lua/plugins/*.lua` to get going.
-  --
-  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'plugins' },
+  { import = 'plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

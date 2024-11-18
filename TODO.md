@@ -9,6 +9,7 @@
 - install automatically Determinate System’s Nix Installer for the shell
 - change symlinks to use $DOTFILES for point to folder consistency
 - create wallpaper folder
+- use wezterm instead of kitty? (+ binds?)
 
 ### ideas
 - Nix
@@ -30,6 +31,9 @@
 
 - rectangle + sketchybar
     - defaults write com.knollsoft.Rectangle screenEdgeGapTop -int 45
+    - make sketchybar lua based
+    - check plugins https://github.com/FelixKratz/SketchyBar/discussions/12?sort=top
+    - https://github.com/FelixKratz/SketchyBar/discussions/12?sort=top#discussioncomment-1555404
 
 ### Links
 - https://gist.github.com/ChristopherA/a579274536aab36ea9966f301ff14f3f
