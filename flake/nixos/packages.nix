@@ -14,6 +14,7 @@
   obsidian
   brave
   kitty
+  rofi
 
   # coding
   gcc
@@ -27,7 +28,13 @@
   neovim
   vim
   fastfetch
+  
+  # Other
+  home-manager
 
+  # Window manager stuff (WM)
+  hyprland
+  waybar
   ];
 
   # fonts.packages = with pkgs; [
