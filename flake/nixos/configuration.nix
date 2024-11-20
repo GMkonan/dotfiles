@@ -42,7 +42,7 @@
 
   services.xserver.displayManager.sddm.enable = true; #This line enables sddm
   services.xserver.enable = true; # Might need this for Xwayland 
-  
+  services.xserver.displayManager.sddm.wayland.enable = true;
   # Configure keymap in X11
   # services.xserver.xkb = {
   #   layout = "us";
@@ -56,6 +56,8 @@
   # services.xserver.libinput.enable = true;
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  programs.hyprland.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;

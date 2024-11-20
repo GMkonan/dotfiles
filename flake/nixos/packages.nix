@@ -14,7 +14,7 @@
   obsidian
   brave
   kitty
-  rofi
+  wofi
 
   # coding
   gcc
@@ -33,11 +33,12 @@
   home-manager
 
   # Window manager stuff (WM)
-  hyprland
+  # hyprland
   waybar
   ];
 
-  # fonts.packages = with pkgs; [
-  #   jetbrains-mono
-  # ];
+   fonts.packages = with pkgs; [
+     jetbrains-mono
+     commit-mono
+   ];
 }

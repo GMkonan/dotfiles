@@ -6,6 +6,9 @@
 - Fix python install (check install insecure, some configs have it)
 - fix font (jetbrains and commit)
 - fix telescope
+- fix internet on hyprland
+- fix fonts
+- display manager and option for both kde and hyprland
 
 rebuild flake command:
 sudo nixos-rebuild switch --flake /etc/nixos#default
