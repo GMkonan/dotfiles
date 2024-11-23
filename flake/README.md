@@ -19,6 +19,13 @@ sudo nixos-rebuild switch --flake ~/code/dotfiles/flake#default
 home manager (should have alias):
 - home-manager switch --flake ./flake/
 
+#### internet stuff
+having some problems with internet stuff while configuring.. just so I can remember:
+> nmcli device wifi connect <SSID> password <password>
+
+In case you have a "secrets" issue delete your con
+> nmcli con delete <SSID>
+
 ### things I wanna install
 - hyprland
 - waybar
