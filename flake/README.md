@@ -1,14 +1,13 @@
 # Nix stuff
 
 ## todo && issues
-- home manager stuff (is it even worth it?) (did it via channel)
-- install hyprland on nix and config via home-manager
-- Fix python install (check install insecure, some configs have it)
+- configure waybar and hyprland
+- update readme better
 - fix font (jetbrains and commit)
 - fix telescope
-- fix internet on hyprland
-- fix fonts
 - display manager and option for both kde and hyprland
+    - try sddm, sddm display manager hyprland and kde nixos
+- Fix python install (check install insecure, some configs have it)
 
 rebuild flake command:
 sudo nixos-rebuild switch --flake /etc/nixos#default
@@ -25,6 +24,9 @@ having some problems with internet stuff while configuring.. just so I can remem
 
 In case you have a "secrets" issue delete your con
 > nmcli con delete <SSID>
+
+### Problem with pixelated brave under wayland
+chrome://flags/ - search wayland - change to wayland - Preferred Ozone platform
 
 ### things I wanna install
 - hyprland
