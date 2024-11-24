@@ -38,9 +38,10 @@
 
   # Enable the KDE Plasma Desktop Environment.
   #services.displayManager.sddm.enable = true;
-  #services.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   services.xserver.displayManager.sddm.enable = true; #This line enables sddm
+  services.displayManager.sddm.theme = "catppuccin-mocha";
   services.xserver.enable = true; # Might need this for Xwayland 
   services.xserver.displayManager.sddm.wayland.enable = true;
   # Configure keymap in X11
