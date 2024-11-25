@@ -28,7 +28,15 @@
   neovim
   vim
   fastfetch
-  
+  fzf
+  # check those below before blindly installing
+  #lsd
+  #lazydocker
+  #lazygit
+  #zoxide
+  #bat
+
+
   # Other
   home-manager
   (catppuccin-sddm.override { flavor = "mocha"; })
