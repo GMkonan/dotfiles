@@ -31,7 +31,7 @@
   
   # Other
   home-manager
-
+  (catppuccin-sddm.override { flavor = "mocha"; })
   # Window manager stuff (WM)
   # hyprland
   waybar
