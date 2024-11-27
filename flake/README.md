@@ -2,6 +2,8 @@
 
 ## todo && issues
 - configure waybar and hyprland
+    - config waybar (margins and other modules)
+    - more options of workspaces hyprland
 - update readme better
 - see if you can config catppuccin sddm 
     - e.g. show better the selected desktop manager
