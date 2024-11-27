@@ -29,15 +29,13 @@
   vim
   fastfetch
   fzf
+  ripgrep
   # check those below before blindly installing
   #lsd
   #lazydocker
   #lazygit
   #zoxide
   #bat
-  
-  # Vim stuff
-  vimplugin-telescope-fzf-native.nvim
 
   # Other
   home-manager
