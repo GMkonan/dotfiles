@@ -35,7 +35,9 @@
   #lazygit
   #zoxide
   #bat
-
+  
+  # Vim stuff
+  vimplugin-telescope-fzf-native.nvim
 
   # Other
   home-manager
@@ -48,5 +50,6 @@
    fonts.packages = with pkgs; [
      jetbrains-mono
      commit-mono
+     font-awesome
    ];
 }

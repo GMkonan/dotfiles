@@ -4,6 +4,7 @@
 
     style =
       ''
+      ${builtins.readFile "${pkgs.waybar}/etc/xdg/waybar/style.css"}
         * {
         font-family: JetBrains Mono;
         }
@@ -12,5 +13,8 @@
           background: #FF00FF;
         }
       '';
+    settings = [{
+      height = 20;
+    }];
   };
 }
