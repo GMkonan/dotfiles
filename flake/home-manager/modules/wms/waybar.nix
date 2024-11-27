@@ -4,7 +4,6 @@
 
     style =
       ''
-      ${builtins.readFile "${pkgs.waybar}/etc/xdg/waybar/style.css"}
         * {
         font-family: JetBrains Mono;
         }

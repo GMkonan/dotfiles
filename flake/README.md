@@ -3,11 +3,12 @@
 ## todo && issues
 - configure waybar and hyprland
 - update readme better
+- see if you can config catppuccin sddm 
+    - e.g. show better the selected desktop manager
 - fix font (jetbrains and commit)
-- fix telescope
-- display manager and option for both kde and hyprland
-    - try sddm, sddm display manager hyprland and kde nixos
 - Fix python install (check install insecure, some configs have it)
+- download ticktick?
+- install screenshot stuff
 
 rebuild flake command:
 sudo nixos-rebuild switch --flake /etc/nixos#default
