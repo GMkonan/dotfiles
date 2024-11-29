@@ -48,6 +48,10 @@ return {
 
     dashboard.section.buttons.val = {
       dashboard.button('f', '  > Find file', ':Telescope find_files<CR>'),
+      dashboard.button('p', '  > Projects', ':Oil ~/code/projects/ <CR>'),
+      -- this path should probably change
+      dashboard.button('s', '  > Settings', ':Oil ~/code/projects/dotfiles <CR>'),
+      -- dashboard.button('P', '󱐥 > Plugins', ':Oil ./ <CR>'),
       -- dashboard.button('s', '  > Settings', ':Oil --float C:/Users/Lenovo/AppData/Local/nvim<CR>'),
       dashboard.button('q', '  > Quit NVIM', ':qa<CR>'),
     }
