@@ -49,5 +49,11 @@
      jetbrains-mono
      commit-mono
      font-awesome
+     noto-fonts
+     noto-fonts-emoji
+     twemoji-color-font
+     powerline-fonts
+     powerline-symbols
+     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
    ];
 }

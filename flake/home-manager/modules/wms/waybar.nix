@@ -52,7 +52,7 @@
     settings = [{
       height = 30;
 
-
+        modules-left = ["clock" "network"];
         modules-right = ["cpu" "battery"];
         battery = { format = "󰁹 {}%"; };
     cpu = {
@@ -60,7 +60,16 @@
       format = "{usage}% ";
       min-length = 6;
     };
-
+      network = {
+        format = "󰖩  {essid}";
+        format-disconnected = "󰖪 disconnected";
+      };
+      clock = {
+        format = " {:%I:%M %p   %m/%d} ";
+        tooltip-format = ''
+          <big>{:%Y %B}</big>
+          <tt><small>{calendar}</small></tt>'';
+      };
     }];
 
   };
