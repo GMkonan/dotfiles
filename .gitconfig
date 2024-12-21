@@ -1,3 +1,13 @@
+########## REF Links for git stuff ##########
+#
+# So you think you know git talk 1 https://www.youtube.com/watch?v=aolI_Rz0ZqY
+# So you think you know git talk 2 https://www.youtube.com/watch?v=Md44rcw13k4
+# switch and restore commands https://speakerdeck.com/schacon/so-you-think-you-know-git-part-2?slide=20
+# fixup and autosquash rebase https://speakerdeck.com/schacon/so-you-think-you-know-git-part-2?slide=70
+# rebasing stacks https://speakerdeck.com/schacon/so-you-think-you-know-git-part-2?slide=84
+#
+#############################################
+
 #This is Git's per-user configuration file.
 [user]
 	name = GMkonan
@@ -5,7 +15,12 @@
 
 [alias]
 	graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-
+	# Stash untracked files too (new files)
+	staash = stash --all
+	# https://speakerdeck.com/schacon/so-you-think-you-know-git?slide=49
+	rblame = blame -w -C -C -C
+	wdiff = diff --word-diff
+	cbranch = branch --column
 [apply]
 
 	# Detect whitespace errors when applying a patch
@@ -40,3 +55,14 @@
 	whitespace = red reverse
 [http]
 	postBuffer = 157286400
+[rerere]
+	enabled = true
+[branch]
+	sort = -committerdate
+[maintenance]
+	repo = /Users/gmkonan/code/work/zapper-dashboard
+[rebase]
+	# Useful for stack based workflow (like at work or e.g. graphite workflow)
+	# TLDR update pointers from dependent branches when you rebase tip of stack
+	# check the ref links at the top of the file for more info
+	updateRefs = true
