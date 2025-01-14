@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 # Path to dotfiles
 export DOTFILES=$HOME/code/projects/dotfiles
 # Path to zsh_custom (files with .zsh will be loaded by default if they are inside the folder specified)
@@ -81,3 +74,9 @@ source "/Users/gmkonan/.deno/env"
 # source $DOTFILES/zsh/*.zsh
 for f ($DOTFILES/zsh/**/*.zsh(N.))  source $f
 eval "$(oh-my-posh init zsh --config $DOTFILES/zsh/theme.omp.json)"
+
+# Created by `pipx` on 2024-11-22 02:27:48
+export PATH="$PATH:/Users/gmkonan/.local/bin"
+
+[ -f "/Users/gmkonan/.ghcup/env" ] && . "/Users/gmkonan/.ghcup/env" # ghcup-env
+export PATH="$HOME/.spin/bin:$PATH"
