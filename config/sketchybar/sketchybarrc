@@ -9,8 +9,8 @@ PLUGIN_DIR="./plugins"
 ITEM_DIR="./items/"
 
 # source $CONFIG_DIR/colors.sh
+source "./userconfig.sh"
 source "./colors.sh"
-
 
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
@@ -19,7 +19,7 @@ source "./colors.sh"
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
 bar=(
-  height=30
+  height=40
   color=$BASE
   shadow=on
   position=top
@@ -43,8 +43,8 @@ sketchybar --bar "${bar[@]}"
 default=(
   padding_left=5
   padding_right=5
-  icon.font="Hack Nerd Font:Bold:17.0"
-  label.font="Hack Nerd Font:Bold:14.0"
+  icon.font="$NERD_FONT:Bold:17.0"
+  label.font="$NERD_FONT:Bold:14.0"
   icon.color=0xffffffff
   label.color=0xffffffff
   icon.padding_left=4
@@ -53,30 +53,6 @@ default=(
   label.padding_right=4
 )
 sketchybar --default "${default[@]}"
-
-##### Adding Mission Control Space Indicators #####
-# Let's add some mission control spaces:
-# https://felixkratz.github.io/SketchyBar/config/components#space----associate-mission-control-spaces-with-an-item
-# to indicate active and available mission control spaces.
-
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
-for i in "${!SPACE_ICONS[@]}"
-do
-  sid="$(($i+1))"
-  space=(
-    space="$sid"
-    icon="${SPACE_ICONS[i]}"
-    icon.padding_left=7
-    icon.padding_right=7
-    background.color=0x40ffffff
-    background.corner_radius=5
-    background.height=25
-    label.drawing=off
-    script="$PLUGIN_DIR/space.sh"
-    click_script="yabai -m space --focus $sid"
-  )
-  sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
-done
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
@@ -87,6 +63,18 @@ sketchybar --add item chevron left \
            --add item front_app left \
            --set front_app icon.drawing=off script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched
+
+# sketchybar 	--add event 				hide_stats   					                                      \
+#            	--add event 				show_stats 					                                        \
+#            	--add event 				toggle_stats 					                                      \
+#                                                            										              \
+#            	--add item         	animator right                									            \
+#            	--set animator     	drawing=off                  									              \
+#                               	updates=on                   									              \
+#                               	script="$HOME/.config/sketchybar/plugins/toggle_stats.sh"   \
+#            	--subscribe        	animator hide_stats show_stats toggle_stats
+#
+#
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.
@@ -99,7 +87,13 @@ sketchybar --add item chevron left \
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
-sketchybar --add item clock right \
+sketchybar --add item animator right \
+           --add event hide_stats \
+           --add event show_stats \
+           --add event toggle_stats \
+           --set animator drawing=off updates=on script="$HOME/.config/sketchybar/plugins/toggle_stats.sh" \
+           --subscribe animator hide_stats show_stats toggle_stats \
+           --add item clock right \
            --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
            --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" \
@@ -108,15 +102,7 @@ sketchybar --add item clock right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
 
-sketchybar  --add   item slack right \
-            --set   slack \
-                    update_freq=10 \
-                    script="$PLUGIN_DIR/slack.sh" \
-                    background.padding_left=15  \
-                    icon.font.size=18 \
-           --subscribe slack system_woke
-
-source "$ITEM_DIR/cpu.sh"
+source "./items/stats.sh"
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
