@@ -1,22 +1,15 @@
 #!/bin/bash
-# This is a demo config to showcase some of the most important commands.
-# It is meant to be changed and configured, as it is intentionally kept sparse.
-# For a (much) more advanced configuration example see my dotfiles:
-# https://github.com/FelixKratz/dotfiles
+
+# Unload the macOS on screen indicator overlay for volume change
+launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
 
 PLUGIN_DIR="./plugins"
 
 ITEM_DIR="./items/"
 
-# source $CONFIG_DIR/colors.sh
 source "./userconfig.sh"
 source "./colors.sh"
-
-##### Bar Appearance #####
-# Configuring the general appearance of the bar.
-# These are only some of the options available. For all options see: https://felixkratz.github.io/SketchyBar/config/bar
-# If you are looking for other colors, see the color picker:
-# https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+source "./plugins/icon_map.sh"
 
 bar=(
   height=40
@@ -43,8 +36,8 @@ sketchybar --bar "${bar[@]}"
 default=(
   padding_left=5
   padding_right=5
-  icon.font="$NERD_FONT:Bold:17.0"
-  label.font="$NERD_FONT:Bold:14.0"
+  icon.font="Hack Nerd Font:Bold:17.0"
+  label.font="Hack Nerd Font:Bold:14.0"
   icon.color=0xffffffff
   label.color=0xffffffff
   icon.padding_left=4
@@ -95,14 +88,13 @@ sketchybar --add item animator right \
            --subscribe animator hide_stats show_stats toggle_stats \
            --add item clock right \
            --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
-           --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
-           --subscribe volume volume_change \
            --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
 
 source "./items/stats.sh"
+# source "./items/keyboard.sh"
+source "$ITEM_DIR/volume.sh"
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
