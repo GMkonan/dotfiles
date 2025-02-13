@@ -15,3 +15,6 @@ alias sd='cd ~ && cd \$(find * -type d | fzf)'
 alias tn='tmux new -s ${PWD:t}'
 alias tls='tmux list-sessions'
 alias ta='tmux a'
+
+# docker aliases
+alias docker-nuke='sudo docker system prune -a --volumes'
