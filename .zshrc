@@ -1,5 +1,5 @@
 # Path to dotfiles
-export DOTFILES=$HOME/code/projects/dotfiles
+export DOTFILES=$HOME/dotfiles
 # Path to zsh_custom (files with .zsh will be loaded by default if they are inside the folder specified)
 ZSH_CUSTOM=$DOTFILES
 
@@ -55,28 +55,12 @@ if [ -f "$HOME"/.secrets ]; then
   source "$HOME"/.secrets
 fi
 
-if [ -f "$HOME"/.aliases ]; then
-  source "$HOME"/.aliases
-fi
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
-# bun completions
-[ -s "/Users/gmkonan/.bun/_bun" ] && source "/Users/gmkonan/.bun/_bun"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # fzf
-source <(fzf --zsh)
+# source <(fzf --zsh)
+
+# zoxide init
 eval "$(zoxide init zsh)"
-source "/Users/gmkonan/.deno/env"
 
 # source $DOTFILES/zsh/*.zsh
 for f ($DOTFILES/zsh/**/*.zsh(N.))  source $f
 eval "$(oh-my-posh init zsh --config $DOTFILES/zsh/theme.omp.json)"
-
-# Created by `pipx` on 2024-11-22 02:27:48
-export PATH="$PATH:/Users/gmkonan/.local/bin"
-
-[ -f "/Users/gmkonan/.ghcup/env" ] && . "/Users/gmkonan/.ghcup/env" # ghcup-env
-export PATH="$HOME/.spin/bin:$PATH"
