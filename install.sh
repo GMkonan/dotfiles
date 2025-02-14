@@ -1,10 +1,10 @@
 # symlinks
 # F flag to force creation even if file exists
-ln -Fs ~/code/projects/dotfiles/.zshrc ~/.zshrc
-ln -Fs ~/code/projects/dotfiles/.aliases ~/.aliases
-ln -Fs ~/code/projects/dotfiles/.gitconfig ~/.gitconfig
-ln -Fs ~/code/projects/dotfiles/.githelpers ~/.githelpers
-ln -Fs ~/code/projects/dotfiles/.tmux.conf ~/.tmux.conf
-ln -Fs ~/code/projects/dotfiles/config/kitty ~/.config/kitty
-ln -Fs ~/code/projects/dotfiles/config/nvim ~/.config/nvim
-
+#
+ln -Fs $PWD/.zshrc $HOME/.zshrc
+ln -Fs $PWD/.gitconfig $HOME/.gitconfig
+ln -Fs $PWD/.githelpers $HOME/.githelpers
+ln -Fs $PWD/.tmux.conf $HOME/.tmux.conf
+ln -Fs $PWD/.aerospace.toml $HOME/.aerospace.toml
+ln -Fs $PWD/config/nvim $HOME/.config/nvim
+ln -Fs $PWD/config/ghostty $HOME/.config/ghostty
