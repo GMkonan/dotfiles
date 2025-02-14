@@ -62,7 +62,7 @@
 [branch]
 	sort = -committerdate
 [maintenance]
-	repo = /Users/gmkonan/code/work/zapper-dashboard
+	repo = /Users/konan/code/work/zapper-dashboard
 [rebase]
 	# Useful for stack based workflow (like at work or e.g. graphite workflow)
 	# TLDR update pointers from dependent branches when you rebase tip of stack
