@@ -27,13 +27,8 @@
 
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
-[credential]
-	helper = osxkeychain
-	credentialStore = gpg
 [init]
 	defaultBranch = main
-[url "https://github"]
-	insteadOf = ssh://git@github
 # diff-so-fancy config
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
