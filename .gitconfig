@@ -54,6 +54,7 @@
 	postBuffer = 157286400
 [rerere]
 	enabled = true
+	autoupdate = true
 [branch]
 	sort = -committerdate
 [maintenance]
@@ -63,3 +64,28 @@
 	# TLDR update pointers from dependent branches when you rebase tip of stack
 	# check the ref links at the top of the file for more info
 	updateRefs = true
+	autoSquash = true
+	autoStash = true
+[column]
+	ui = auto
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
+[commit]
+	verbose = true
+[merge]
+	conflictstyle = zdiff3
