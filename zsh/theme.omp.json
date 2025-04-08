@@ -15,13 +15,23 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
-            "cache_duration": "none"
-          },
-          "template": " \u9999",
+          "type": "os",
+          "style": "plain",
           "foreground": "p:green",
-          "type": "text",
-          "style": "plain"
+          "properties": {
+            "windows": "\ue70f",
+            "macos": "\ue711",
+            "linux": "\ue712",
+            "ubuntu": "\ue73a",
+            "debian": "\ue77d",
+            "arch": "\ue77f",
+            "fedora": "\ue7ba",
+            "mint": "\ue78d",
+            "raspberry_pi": "\ue722",
+            "wsl": "\ue70f \ue712",
+            "wsl_separator": " "
+          },
+          "template": " {{ .Icon }} "
         },
         {
           "properties": {
