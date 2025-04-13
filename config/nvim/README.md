@@ -2,6 +2,7 @@
 Initially based on kickstart nvim.
 
 ### Todo
+- [ ] Add Lint from kickstart
 - add screenshot here or something
 - [NVIM] add git plugins to nvim
 - [NVIM] Check inspirations for more different plugins

@@ -1,6 +1,4 @@
--- Autoformat
--- conform
-
+-- Autoformat with conform.nvim
 return {
   'stevearc/conform.nvim',
   event = { 'BufWritePre' },
@@ -16,12 +14,11 @@ return {
     },
   },
   opts = {
-    default_format_opts = { async = true, lsp_format = 'fallback' },
+    default_format_opts = { async = true, lsp_fallback = true },
     notify_on_error = false,
     format_on_save = function(bufnr)
       -- Disable "format_on_save lsp_fallback" for languages that don't
-      -- have a well standardized coding style. You can add additional
-      -- languages here or re-enable it for the disabled ones.
+      -- have a well standardized coding style.
       local disable_filetypes = { c = true, cpp = true }
       return {
         timeout_ms = 500,
@@ -29,35 +26,27 @@ return {
       }
     end,
     formatters_by_ft = {
-      lua = { 'stylua' },
-      -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
-      --
-      -- You can use 'stop_after_first' to run the first available formatter from the list
-      -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      rust = { 'rustfmt' },
 
-      python = { 'isort', 'black' },
-      -- You can customize some of the format options for the filetype (:help conform.format)
-      rust = { 'rustfmt', lsp_format = 'fallback' },
-      -- Conform will run the first available formatter
-      -- javascript = { "eslint_d", "prettierd", "prettier", stop_after_first = true },
-      typescript = { 'biome', 'ts_ls', 'prettierd', 'prettier', stop_after_first = true },
-      -- javascriptreact = { "eslint_d", "prettierd", "prettier", stop_after_first = true },
-      typescriptreact = { 'biome', 'ts_ls', 'prettierd', 'prettier', stop_after_first = true },
-      html = { 'biome', 'ts_ls', 'prettierd', stop_after_first = true },
-      javascript = { 'biome', 'ts_ls', 'prettierd', stop_after_first = true },
-      javascriptreact = { 'biome', 'ts_ls', 'prettierd', stop_after_first = true },
-      markdown = { 'biome', 'ts_ls', 'prettierd', stop_after_first = true },
-      -- typescript = { { 'biome', 'ts_ls', 'prettierd' } },
-      -- typescriptreact = { { 'biome', 'ts_ls', 'prettierd' } },
+      javascript = { 'biome-check', 'prettierd', 'prettier', stop_after_first = true },
+      javascriptreact = { 'biome-check', 'prettierd', 'prettier', stop_after_first = true },
+      typescript = { 'biome-check', 'prettierd', 'prettier', stop_after_first = true },
+      typescriptreact = { 'biome-check', 'prettierd', 'prettier', stop_after_first = true },
+      html = { 'biome-check', 'prettierd', stop_after_first = true },
+      json = { "biome-check", "prettierd", "prettier", stop_after_first = true },
+      css = { "biome-check", "prettierd", "prettier", stop_after_first = true },
+      nix = { 'alejandra' },
     },
     formatters = {
-      biome = {
+      ['biome-check'] = {
         command = 'biome',
       },
+      -- Uncomment if you want to enable prettierd with config detection
       -- prettierd = {
       --   condition = function()
-      --     return vim.loop.fs_realpath '.prettierrc.js' ~= nil or vim.loop.fs_realpath '.prettierrc.mjs' ~= nil
+      --     return vim.fs.find({'.prettierrc', '.prettierrc.js', '.prettierrc.json'}, {
+      --       upward = true,
+      --     })[1] ~= nil
       --   end,
       -- },
     },
