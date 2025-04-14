@@ -34,7 +34,7 @@ return {
       typescriptreact = { 'biome-check', 'prettierd', 'prettier', stop_after_first = true },
       html = { 'biome-check', 'prettierd', stop_after_first = true },
       json = { "biome-check", "prettierd", "prettier", stop_after_first = true },
-      jsonc = { "biome-check", "prettierd", "prettier", stop_after_first = true },
+      jsonc = { "biome-check", "prettierd", stop_after_first = true },
       css = { "biome-check", "prettierd", "prettier", stop_after_first = true },
       nix = { 'alejandra' },
     },
