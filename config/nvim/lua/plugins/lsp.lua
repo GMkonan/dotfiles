@@ -99,7 +99,6 @@ return {
         nil_ls = {},
         tsserver = {}, -- Note: using the proper name here (not ts_ls)
         yamlls = {},
-        marksman = {},
         texlab = {},
         html = {},
         helm_ls = {},
