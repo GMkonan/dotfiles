@@ -18,3 +18,6 @@ alias ta='tmux a'
 
 # docker aliases
 alias docker-nuke='sudo docker system prune -a --volumes'
+
+# alias vscode for better wayland support
+alias code='code --enable-features=WaylandLinuxDrmSyncobj'
