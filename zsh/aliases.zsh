@@ -9,6 +9,7 @@ alias cat='bat'
 
 # fzf aliases
 alias sd='cd ~ && cd \$(find * -type d | fzf)'
+alias f='nvim $(fzf --preview "bat --style=numbers --color=always --line-range :500 {}")'
 
 # tmux aliases
 # https://askubuntu.com/questions/868186/how-to-kill-all-tmux-sessions-or-at-least-multiple-sessions-from-the-cli
