@@ -45,7 +45,6 @@ require('lazy').setup({
 
   --
   -- See `:help gitsigns` to understand what the configuration keys do
-  require 'plugins/gitsigns',
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
