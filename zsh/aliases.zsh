@@ -22,3 +22,8 @@ alias docker-nuke='sudo docker system prune -a --volumes'
 
 # alias vscode for better wayland support
 alias code='code --enable-features=WaylandLinuxDrmSyncobj'
+
+# git aliases
+alias gs='git status'
+alias gd='git diff'
+alias gl='git l'
