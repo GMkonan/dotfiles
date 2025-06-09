@@ -23,6 +23,7 @@
 	cbranch = branch --column
 	# ! indicates it will run a shell command not a git command, so we can source and then use a function inside githelpers
 	l = "!. ~/.githelpers && pretty_git_log"
+	safe-push = push --force-with-lease --force-if-includes
 [apply]
 
 	# Detect whitespace errors when applying a patch
