@@ -6,7 +6,8 @@
 		"green": "#a6e3a1",
 		"lavender": "#B4BEFE",
 		"os": "#ACB0BE",
-		"pink": "#F5C2E7"
+		"pink": "#F5C2E7",
+		"white": "#cdd6f4"
 	},
 	"console_title_template": "{{.Folder}}{{if .Root}} :: root{{end}} :: {{.Shell}}",
 	"blocks": [
@@ -17,7 +18,7 @@
 				{
 					"type": "os",
 					"style": "plain",
-					"foreground": "p:green",
+					"foreground": "p:white",
 					"properties": {
 						"windows": "\ue70f",
 						"macos": "\ue711",
@@ -35,22 +36,13 @@
 				},
 				{
 					"properties": {
-						"cache_duration": "none"
-					},
-					"template": " Konan@{{ .HostName }} ",
-					"foreground": "p:blue",
-					"type": "session",
-					"style": "plain"
-				},
-				{
-					"properties": {
 						"cache_duration": "none",
 						"folder_icon": "..\ue5fe..",
 						"home_icon": "~",
 						"style": "agnoster_short"
 					},
-					"template": "{{ .Path }} ",
-					"foreground": "p:pink",
+					"template": " {{ .Path }} ",
+					"foreground": "p:blue",
 					"type": "path",
 					"style": "plain"
 				},
