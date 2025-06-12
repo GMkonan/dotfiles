@@ -55,8 +55,17 @@ if [ -f "$HOME"/.secrets ]; then
   source "$HOME"/.secrets
 fi
 
+export EDITOR="nvim"
+
 # fzf
 # source <(fzf --zsh)
+
+if [ -n "$CMD" ]; then
+    # Unset CMD so it doesn't keep running in subsequent sub-shells
+    cmd="$CMD"
+    unset CMD
+    eval "$cmd"
+fi
 
 # zoxide init
 eval "$(zoxide init zsh)"

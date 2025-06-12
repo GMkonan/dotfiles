@@ -27,3 +27,9 @@ alias code='code --enable-features=WaylandLinuxDrmSyncobj'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git l'
+
+alias v="$EDITOR"
+
+# temporarily execute with sh instead of having a tmux-sesh globally
+# alias tt="tmux-sesh"
+alias tt="sh ~/flake/modules/home/cli/tmux-sesh.sh"
