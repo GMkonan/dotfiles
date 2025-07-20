@@ -104,6 +104,7 @@ return {
         helm_ls = {},
         zls = {},
         gopls = {},
+        qmlls = {}
       }
 
       -- Set up each server
