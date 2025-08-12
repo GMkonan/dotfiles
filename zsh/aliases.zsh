@@ -27,6 +27,11 @@ alias code='code --enable-features=WaylandLinuxDrmSyncobj'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git l'
+alias gc='git commit -m'
+alias gcnv='git commit --no-verify -m'
+
+# graphite (gt) aliases
+alias gtm='gt modify --no-verify'
 
 alias v="$EDITOR"
 
