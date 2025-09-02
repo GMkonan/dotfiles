@@ -7,7 +7,9 @@
 		"lavender": "#B4BEFE",
 		"os": "#ACB0BE",
 		"pink": "#F5C2E7",
-		"white": "#cdd6f4"
+		"white": "#cdd6f4",
+		"orange": "#fab387",
+		"mauve": "#cba6f7"
 	},
 	"console_title_template": "{{.Folder}}{{if .Root}} :: root{{end}} :: {{.Shell}}",
 	"blocks": [
@@ -64,6 +66,13 @@
 					"foreground": "p:lavender",
 					"type": "git",
 					"style": "plain"
+				},
+				{
+					"type": "nix-shell",
+					"style": "powerline",
+					"foreground": "p:mauve",
+					"background": "transparent",
+					"template": "{{ if ne .Type \"unknown\" }} (nix-{{ .Type }}){{ end }}"
 				}
 			]
 		},
