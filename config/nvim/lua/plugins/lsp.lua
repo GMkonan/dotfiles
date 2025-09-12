@@ -105,7 +105,9 @@ return {
         helm_ls = {},
         zls = {},
         gopls = {},
-        qmlls = {}
+        qmlls = {
+          cmd = { "qmlls" }
+        }
       }
 
       -- Set up each server
